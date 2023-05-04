@@ -1,5 +1,5 @@
-const normal = [12,13,14,15,17,18,19];
-const hard = [];
+const normal = [12,13,14,15,17,18,19,45,46,47];
+const hard = [20,21,22,23,24,25,26];
 const brutal = [];
 const nightmare = [];
 
@@ -7,13 +7,12 @@ const selectedArray = document.getElementById("selectedArray");
 const selectedSlice = document.getElementById("selectedSlice");
 const selectedStage = document.getElementById("selectedStage");
 
-let tableau = normal;
+let tableau;
 let chapter = [];
-let stage = [];
+let stage;
 
 selectedArray.addEventListener("change", () => {
-  // Récupérer la référence du tableau sélectionné
-  let tableau;
+
   if (selectedArray.value === "normal") {
     tableau = normal;
   } else if (selectedArray.value === "hard") {
@@ -26,8 +25,7 @@ selectedArray.addEventListener("change", () => {
 });
 
 selectedSlice.addEventListener("change", () => {
-  // Récupérer la tranche de valeurs sélectionnée
-  let chapter;
+
   if (selectedSlice.value === "cha1") {
     chapter = tableau.slice(0, 7); 
   } else if (selectedSlice.value === "cha2") {
@@ -52,7 +50,7 @@ selectedSlice.addEventListener("change", () => {
 });
 
 selectedStage.addEventListener("change", () => {
-let stage;
+
 if(selectedStage.value === "sta1") {
   stage = chapter[0];
 } else if (selectedStage.value === "sta2") {
@@ -67,14 +65,5 @@ if(selectedStage.value === "sta1") {
   stage = chapter[5];
 } else if (selectedStage.value === "sta7") {
   stage = chapter[6];
-} else if (selectedStage.value === "sta8") {
-  stage = chapter[7];
-} else if (selectedStage.value === "sta9") {
-  stage = chapter[8];
-} else if (selectedStage.value === "sta10") {
-  stage = chapter[9];
 }
-
 });
-
-console.log(stage);

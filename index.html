@@ -11,25 +11,22 @@
 <body>
    <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    KIATO-OL 
-  </a>
+  <a class="navbar-brand" href="#">SFTool</a>
 </nav>
 
-    <div>
+
       <div class="row mt-3 mx-auto">
-      <div class="col"><h1>Campaign XP Calculator</h1>
-    </div>
-      <div class="col"><h3>i</h3>
-    </div>
-    </div>
+        <div class="col"><h1>Campaign XP Calculator</h1>
+        </div>
+        <div class="col"><h3>i</h3>
+        </div>
+      </div>
     
     
     <!--Selected items-->  
     <div class="row mt-3 mx-auto">
     <div class="ml-3">
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" id="selectedArray" aria-label="Default select example">
         <option selected>Difficulty</option>
         <option value="normal">Normal</option>
         <option value="hard">Hard</option>
@@ -38,7 +35,7 @@
       </select>
     </div>
     <div class="ml-3">
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" id="selectedSlice" aria-label="Default select example">
         <option selected>Chapter</option>
         <option value="cha1">Chapter 1</option>
         <option value="cha2">Chapter 2</option>
@@ -53,7 +50,7 @@
       </select>
     </div>
       <div class="ml-3">
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" id="selectedStage" aria-label="Default select example">
           <option selected>Stage</option>
           <option value="Sta1">Stage 1</option>
           <option value="sta2">Stage 2</option>

@@ -11,3 +11,8 @@ h3 {
     color: aliceblue;
     font-size: 14px;
 }
+
+input {
+    width: 20px;
+    height: 20px;
+}

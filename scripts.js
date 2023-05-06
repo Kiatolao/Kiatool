@@ -16,6 +16,22 @@ let chapter = [];
 let stage;
 let energy;
 
+function updateEnergy() {
+  if (selectedArray.value === "normal") {
+    if (selectedStage.value === "sta7") {
+      energy = 6;
+    } else {
+      energy = 4;
+    }
+  } else if (selectedArray.value === "hard") {
+    if (selectedStage.value === "sta7") {
+      energy = 8;
+    } else {
+      energy = 6;
+    }
+  }
+}
+
 selectedArray.addEventListener("change", () => {
 
   if (selectedArray.value === "normal") {
@@ -27,6 +43,7 @@ selectedArray.addEventListener("change", () => {
   } else if (selectedArray.value === "nightmare") {
     tableau = nightmare;
   }
+  updateEnergy();
 });
 
 selectedSlice.addEventListener("change", () => {
@@ -51,7 +68,8 @@ selectedSlice.addEventListener("change", () => {
     chapter = tableau.slice(56, 63);
   } else if (selectedSlice.value === "cha10") {
     chapter = tableau.slice(63, 70);
-  } 
+  }
+  updateEnergy();
 });
 
 selectedStage.addEventListener("change", () => {
@@ -71,20 +89,11 @@ if(selectedStage.value === "sta1") {
 } else if (selectedStage.value === "sta7") {
   stage = chapter[6];
 }
+updateEnergy();
 });
 
-selectedArray.addEventListener("change", () => { 
-  selectedStage.addEventListener("change", () => {
-   if (selectedArray.value === "normal" && selectedStage.value !== "sta7") { 
-     tableau = normal; 
-     energy = 4;
-   } else if (selectedArray.value === "normal" && selectedStage.value === "sta7") {
-     energy = 6;
-   } else if (selectedArray.value === "hard" && selectedStage.value !== "sta7") { 
-     tableau = normal; 
-     energy = 6;
-   } else if (selectedArray.value === "hard" && selectedStage.value === "sta7") {
-     energy = 8;
-   }
-    
- })});
+
+
+
+
+

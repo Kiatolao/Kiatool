@@ -74,17 +74,17 @@ if(selectedStage.value === "sta1") {
 });
 
 selectedArray.addEventListener("change", () => { 
-   if (selectedArray.value === "normal") { 
+  selectedStage.addEventListener("change", () => {
+   if (selectedArray.value === "normal" && selectedStage.value !== "sta7") { 
      tableau = normal; 
-     energy = 4; // set energy to 4 when normal is selected
-   } else if (selectedArray.value === "hard") { 
-     tableau = hard; 
-     energy = 6; // set energy to 6 when hard is selected
-   } else if (selectedArray.value === "brutal") { 
-     tableau = brutal; 
-     energy = 8; 
-   } else if (selectedArray.value === "nightmare") { 
-     tableau = nightmare; 
-     energy = 10; 
-   } 
- });
+     energy = 4;
+   } else if (selectedArray.value === "normal" && selectedStage.value === "sta7") {
+     energy = 6;
+   } else if (selectedArray.value === "hard" && selectedStage.value !== "sta7") { 
+     tableau = normal; 
+     energy = 6;
+   } else if (selectedArray.value === "hard" && selectedStage.value === "sta7") {
+     energy = 8;
+   }
+    
+ })});

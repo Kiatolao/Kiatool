@@ -14,6 +14,7 @@ const selectedStage = document.getElementById("selectedStage");
 let tableau;
 let chapter = [];
 let stage;
+let energy;
 
 selectedArray.addEventListener("change", () => {
 
@@ -71,3 +72,9 @@ if(selectedStage.value === "sta1") {
   stage = chapter[6];
 }
 });
+
+if ( tableau = normal && selectedStage.value !== "sta7") {
+  energy = 4;
+} else { 
+  energy = 6;
+}

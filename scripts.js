@@ -74,9 +74,17 @@ if(selectedStage.value === "sta1") {
 });
 
 selectedStage.addEventListener("change", () => {
-  if (tableau === normal && selectedStage.value !== "sta7") {
+  if (tableau = normal && selectedStage.value !== "sta7") {
     energy = 4;
   } else {
     energy = 6;
+  }
+});
+
+selectedStage.addEventListener("change", () => {
+  if (tableau = hard && selectedStage.value !== "sta7") {
+    energy = 6;
+  } else {
+    energy = 8;
   }
 });

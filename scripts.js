@@ -85,6 +85,6 @@ selectedArray.addEventListener("change", () => {
      energy = 8; 
    } else if (selectedArray.value === "nightmare") { 
      tableau = nightmare; 
-     energy = 8; 
+     energy = 10; 
    } 
  });

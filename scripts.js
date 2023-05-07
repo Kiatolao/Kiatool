@@ -14,13 +14,16 @@ const timeCompMin = document.getElementById("minutes");
 const timeCompSec = document.getElementById("secondes");
 const multiRun = document.getElementById("multis");
 const timeLoad = document.getElementById("loading");
-const calculate = document.getElementById ("calculateBtn");
-const reset = document.getElementById ("resetBtn");
+const calculate = document.getElementById("calculatebtn");
+const reset = document.getElementById("resetbtn");
 
 let tableau;
 let chapter = [];
 let stage;
 let energy;
+let totalTime;
+let totalEnergy;
+let totalExp;
 
 // Updates energy cost when an event is triggered
 function updateEnergy() {
@@ -49,7 +52,7 @@ function updateEnergy() {
       energy = 10; 
     }
   }
-}
+};
 
 // Update exp when an event is triggered
 function updateStage() {
@@ -103,7 +106,7 @@ function updateStage() {
     stage = slice[6];
   }
   updateEnergy();
-}
+};
 
 // Difficulty option select
 selectedArray.addEventListener("change", () => {
@@ -165,5 +168,6 @@ if(selectedStage.value === "sta1") {
 updateStage();
 });
 
-
+calculate.addEventListener("click", () => {
+});
 

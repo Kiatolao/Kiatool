@@ -10,6 +10,12 @@ const nightmare = [];
 const selectedArray = document.getElementById("selectedArray");
 const selectedSlice = document.getElementById("selectedSlice");
 const selectedStage = document.getElementById("selectedStage");
+const timeCompMin = document.getElementById("minutes");
+const timeCompSec = document.getElementById("secondes");
+const multiRun = document.getElementById("multis");
+const timeLoad = document.getElementById("loading");
+const calculate = document.getElementById ("calculateBtn");
+const reset = document.getElementById ("resetBtn");
 
 let tableau;
 let chapter = [];
@@ -156,8 +162,8 @@ if(selectedStage.value === "sta1") {
 } else if (selectedStage.value === "sta7") {
   stage = chapter[6];
 }
-console.log(stage,energy,chapter,tableau)
 updateStage();
 });
+
 
 

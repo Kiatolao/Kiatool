@@ -16,6 +16,7 @@ let chapter = [];
 let stage;
 let energy;
 
+// Updates energy cost when an event is triggered
 function updateEnergy() {
   if (selectedArray.value === "normal") {
     if (selectedStage.value === "sta7") {
@@ -29,11 +30,77 @@ function updateEnergy() {
     } else {
       energy = 6;
     }
+  } else if (selectedArray.value === "brutal") { 
+    if (selectedStage.value === "sta7") { 
+      energy = 10; 
+    } else { 
+      energy = 8; 
+    }
+  } else if (selectedArray.value === "nightmare") { 
+    if (selectedStage.value === "sta7") { 
+      energy = 12; 
+    } else { 
+      energy = 10; 
+    }
   }
 }
 
-selectedArray.addEventListener("change", () => {
+// Update exp when an event is triggered
+function updateStage() {
+  let array = normal;
+  if (selectedArray.value === "normal") {
+    array = normal;
+  } else if (selectedArray.value === "hard") {
+    array = hard;
+  } else if (selectedArray.value === "brutal") {
+    array = brutal;
+  } else if (selectedArray.value === "nightmare") {
+    array = nightmare;
+  }
 
+  let slice = array;
+  if (selectedSlice.value === "cha1") {
+    slice = array.slice(0, 7);
+  } else if (selectedSlice.value === "cha2") {
+    slice = array.slice(7, 14);
+  } else if (selectedSlice.value === "cha3") {
+    slice = array.slice(14, 21);
+  } else if (selectedSlice.value === "cha4") {
+    slice = array.slice(21, 28);
+  } else if (selectedSlice.value === "cha5") {
+    slice = array.slice(28, 35);
+  } else if (selectedSlice.value === "cha6") {
+    slice = array.slice(35, 42);
+  } else if (selectedSlice.value === "cha7") {
+    slice = array.slice(42, 49);
+  } else if (selectedSlice.value === "cha8") {
+    slice = array.slice(49, 56);
+  } else if (selectedSlice.value === "cha9") {
+    slice = array.slice(56, 63);
+  } else if (selectedSlice.value === "cha10") {
+    slice = array.slice(63, 70);
+  }
+
+  if (selectedStage.value === "sta1") {
+    stage = slice[0];
+  } else if (selectedStage.value === "sta2") {
+    stage = slice[1];
+  } else if (selectedStage.value === "sta3") {
+    stage = slice[2];
+  } else if (selectedStage.value === "sta4") {
+    stage = slice[3];
+  } else if (selectedStage.value === "sta5") {
+    stage = slice[4];
+  } else if (selectedStage.value === "sta6") {
+    stage = slice[5];
+  } else if (selectedStage.value === "sta7") {
+    stage = slice[6];
+  }
+  updateEnergy();
+}
+
+// Difficulty option select
+selectedArray.addEventListener("change", () => {
   if (selectedArray.value === "normal") {
     tableau = normal;
   } else if (selectedArray.value === "hard") {
@@ -43,11 +110,11 @@ selectedArray.addEventListener("change", () => {
   } else if (selectedArray.value === "nightmare") {
     tableau = nightmare;
   }
-  updateEnergy();
+  updateStage();
 });
 
+// Chapter option select
 selectedSlice.addEventListener("change", () => {
-
   if (selectedSlice.value === "cha1") {
     chapter = tableau.slice(0, 7); 
   } else if (selectedSlice.value === "cha2") {
@@ -69,11 +136,11 @@ selectedSlice.addEventListener("change", () => {
   } else if (selectedSlice.value === "cha10") {
     chapter = tableau.slice(63, 70);
   }
-  updateEnergy();
+  updateStage();
 });
 
+// Stage option select
 selectedStage.addEventListener("change", () => {
-
 if(selectedStage.value === "sta1") {
   stage = chapter[0];
 } else if (selectedStage.value === "sta2") {
@@ -89,11 +156,8 @@ if(selectedStage.value === "sta1") {
 } else if (selectedStage.value === "sta7") {
   stage = chapter[6];
 }
-updateEnergy();
+console.log(stage,energy,chapter,tableau)
+updateStage();
 });
-
-
-
-
 
 

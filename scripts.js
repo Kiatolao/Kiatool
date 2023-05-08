@@ -24,7 +24,9 @@ let tableau;
 let chapter = [];
 let stage;
 let energy;
-let totalTime;
+let totalTimeMin;
+let totalTimeSec;
+let totalTimeLoad;
 let totalEnergy;
 let totalExp;
 
@@ -185,7 +187,28 @@ updateStage();
 });
 
 calculate.addEventListener("click", () => {
-let paragraph = `${myMin * myRun} minutes`;
+let mySecDiv;
+let remainingSec;
+let myLoadDiv;
+let remainingLoad;
+let totalRemaingSec;
+
+totalTimeMin = myMin * myRun;
+totalTimeSec = mySec * myRun;
+totalTimeLoad = loading * myRun;
+totalTimeSec = remainingSec + remainingLoad;
+
+if (totalTimeSec > 60) {
+  mySecDiv = Math.floor(totalTimeSec / 60);
+  remainingSec = totalTimeSec % 60;
+}
+
+if (totalTimeLoad > 60){
+  myLoadDiv = Math.floor(totalTimeLoad / 60);
+  remainingLoad = totalTimeLoad % 60;
+}
+
+let paragraph = `${totalTimeMin + mySecDiv + myLoadDiv} minutes ${} seconds`;
 document.getElementById("result").innerHTML = paragraph;
   
 });

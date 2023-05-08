@@ -11,12 +11,15 @@ const selectedArray = document.getElementById("selectedArray");
 const selectedSlice = document.getElementById("selectedSlice");
 const selectedStage = document.getElementById("selectedStage");
 const timeCompMin = document.getElementById("minutes");
-const timeCompSec = document.getElementById("secondes");
+const timeCompSec = document.getElementById("seconds");
 const multiRun = document.getElementById("multis");
 const timeLoad = document.getElementById("loading");
 const calculate = document.getElementById("calculatebtn");
 const reset = document.getElementById("resetbtn");
 
+let myMin = timeCompMin.value;
+let mySec = timeCompSec.value;
+let myRun = multiRun.value;
 let tableau;
 let chapter = [];
 let stage;
@@ -24,6 +27,19 @@ let energy;
 let totalTime;
 let totalEnergy;
 let totalExp;
+
+//updated input
+timeCompMin.addEventListener("input", () => {
+  myMin = timeCompMin.value;
+});
+
+timeCompSec.addEventListener("input", () => {
+  mySec = timeCompSec.value;
+});
+
+multiRun.addEventListener("input", () => {
+  myRun = multiRun.value;
+});
 
 // Updates energy cost when an event is triggered
 function updateEnergy() {
@@ -169,5 +185,8 @@ updateStage();
 });
 
 calculate.addEventListener("click", () => {
+let paragraph = `${myMin * myRun} minutes`;
+document.getElementById("result").innerHTML = paragraph;
+  
 });
 

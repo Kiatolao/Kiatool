@@ -20,6 +20,7 @@ const reset = document.getElementById("resetbtn");
 let myMin = timeCompMin.value;
 let mySec = timeCompSec.value;
 let myRun = multiRun.value;
+let myLoad = loading.value;
 let tableau;
 let chapter = [];
 let stage;
@@ -27,8 +28,15 @@ let energy;
 let totalTimeMin;
 let totalTimeSec;
 let totalTimeLoad;
+let totalReTimeSec;
 let totalEnergy;
 let totalExp;
+let mySecDiv;
+let remainingSec;
+let myLoadDiv;
+let remainingLoad;
+let finalRemainingSec;
+let finalRemainingDiv;
 
 //updated input
 timeCompMin.addEventListener("input", () => {
@@ -41,6 +49,10 @@ timeCompSec.addEventListener("input", () => {
 
 multiRun.addEventListener("input", () => {
   myRun = multiRun.value;
+});
+
+timeLoad.addEventListener("input", () => {
+  myLoad = timeLoad.value;
 });
 
 // Updates energy cost when an event is triggered
@@ -187,28 +199,33 @@ updateStage();
 });
 
 calculate.addEventListener("click", () => {
-let mySecDiv;
-let remainingSec;
-let myLoadDiv;
-let remainingLoad;
-let totalRemaingSec;
 
 totalTimeMin = myMin * myRun;
 totalTimeSec = mySec * myRun;
-totalTimeLoad = loading * myRun;
-totalTimeSec = remainingSec + remainingLoad;
+totalTimeLoad = myLoad * myRun;
 
-if (totalTimeSec > 60) {
+
+console.log(totalReTimeSec)
+
+if (totalTimeSec >= 60) {
   mySecDiv = Math.floor(totalTimeSec / 60);
   remainingSec = totalTimeSec % 60;
 }
 
-if (totalTimeLoad > 60){
+if (totalTimeLoad >= 60){
   myLoadDiv = Math.floor(totalTimeLoad / 60);
   remainingLoad = totalTimeLoad % 60;
 }
 
-let paragraph = `${totalTimeMin + mySecDiv + myLoadDiv} minutes ${} seconds`;
+totalReTimeSec = remainingSec + remainingLoad;
+
+if (totalReTimeSec >= 60) {
+  finalRemainingDiv = Math.floor(totalReTimeSec / 60);
+  finalRemainingSec = totalReTimeSec % 60;
+}
+console.log(totalTimeMin, totalTimeSec, totalTimeLoad, totalReTimeSec);
+
+let paragraph = `${totalTimeMin + mySecDiv + myLoadDiv + finalRemainingDiv} minutes ${finalRemainingSec} seconds`;
 document.getElementById("result").innerHTML = paragraph;
   
 });

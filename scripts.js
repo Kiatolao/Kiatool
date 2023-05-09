@@ -25,18 +25,7 @@ let tableau;
 let chapter = [];
 let stage;
 let energy;
-let totalTimeMin;
-let totalTimeSec;
-let totalTimeLoad;
-let totalReTimeSec;
 let totalEnergy;
-let totalExp;
-let mySecDiv;
-let remainingSec;
-let myLoadDiv;
-let remainingLoad;
-let finalRemainingSec;
-let finalRemainingDiv;
 
 //updated input
 timeCompMin.addEventListener("input", () => {
@@ -198,35 +187,33 @@ if(selectedStage.value === "sta1") {
 updateStage();
 });
 
+// Calculate total time/xp/energy
 calculate.addEventListener("click", () => {
 
-totalTimeMin = myMin * myRun;
-totalTimeSec = mySec * myRun;
-totalTimeLoad = myLoad * myRun;
+let convertedMin;
+let totalExp;
+let remainingSec;
 
+// Total time formula
+let totalTimeMin = myMin * myRun;
+let totalTimeSec = mySec * myRun;
+let totalTimeLoad = myLoad * myRun;
+let totalTime = (totalTimeMin * 60) + totalTimeSec + totalTimeLoad;
 
-console.log(totalReTimeSec)
-
-if (totalTimeSec >= 60) {
-  mySecDiv = Math.floor(totalTimeSec / 60);
-  remainingSec = totalTimeSec % 60;
+if (totalTime >= 60) {
+  convertedMin = Math.floor(totalTime / 60);
+  remainingSec = totalTime % 60;
+} else {
+  convertedMin = 0;
+  remainingSec = totalTime;
 }
 
-if (totalTimeLoad >= 60){
-  myLoadDiv = Math.floor(totalTimeLoad / 60);
-  remainingLoad = totalTimeLoad % 60;
-}
-
-totalReTimeSec = remainingSec + remainingLoad;
-
-if (totalReTimeSec >= 60) {
-  finalRemainingDiv = Math.floor(totalReTimeSec / 60);
-  finalRemainingSec = totalReTimeSec % 60;
-}
-console.log(totalTimeMin, totalTimeSec, totalTimeLoad, totalReTimeSec);
-
-let paragraph = `${totalTimeMin + mySecDiv + myLoadDiv + finalRemainingDiv} minutes ${finalRemainingSec} seconds`;
+//Total energy formula
+totalEnergy = energy * myRun;
+totalExp = stage * myRun
+console.log(totalEnergy, totalExp)
+//Results display
+let paragraph = `${convertedMin} minutes ${remainingSec} seconds`;
 document.getElementById("result").innerHTML = paragraph;
-  
 });
 

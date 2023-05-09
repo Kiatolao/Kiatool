@@ -12,6 +12,12 @@ h1 {
 h3 {
     color: aliceblue;
     font-size: 14px;
+    font-weight: bold;
+}
+
+h4 {
+  color: aliceblue;
+  font-size: 14px;
 }
 
 input {
@@ -21,4 +27,8 @@ input {
 
 .btn {
   width: 100px;
+}
+
+i {
+  font-size: 12px;
 }

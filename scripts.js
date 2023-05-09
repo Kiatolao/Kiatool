@@ -206,14 +206,22 @@ if (totalTime >= 60) {
 } else {
   convertedMin = 0;
   remainingSec = totalTime;
-}
+};
+
 
 //Total energy formula
 totalEnergy = energy * myRun;
-totalExp = stage * myRun
+totalExp = stage * myRun;
 console.log(totalEnergy, totalExp)
+
 //Results display
-let paragraph = `${convertedMin} minutes ${remainingSec} seconds`;
-document.getElementById("result").innerHTML = paragraph;
+let paragraphT = `Total time : ${convertedMin} minutes ${remainingSec} seconds`;
+document.getElementById("time").innerHTML = paragraphT;
+
+let paragraphEx = `Total XP gain v ${totalExp} XP`;
+document.getElementById("exp").innerHTML = paragraphEx;
+
+let paragraphEn = `Total energy spent : ${totalEnergy} energy`;
+document.getElementById("energy").innerHTML = paragraphEn;
 });
 

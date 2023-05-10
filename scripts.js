@@ -1,8 +1,4 @@
-const normal = [189,219,251,282,313,345,376
-,313,345,376,407,438,470,501
-,438,470,501,532,564,594,626
-,564,594,626,657,689,720,752
-,689,720,752,783,813,845,876];
+const normal = [189,219,251,282,313,345,376,313,345,376,407,438,470,501,438,470,501,532,564,594,626,564,594,626,657,689,720,752,689,720,752,783,813,845,876,813,845,876,908,939,971,1001,939,971,1001,1032,1064,1095,1127,1064,1095,1127,1158,1190,1120,1252,1190,1220,1252,1283,1314,1346,1377,1314,1346,1377,1408,1439,1471,1502];
 const hard = [20,21,22,23,24,25,26];
 const brutal = [];
 const nightmare = [];
@@ -208,20 +204,19 @@ if (totalTime >= 60) {
   remainingSec = totalTime;
 };
 
-
 //Total energy formula
 totalEnergy = energy * myRun;
 totalExp = stage * myRun;
 console.log(totalEnergy, totalExp)
 
 //Results display
-let paragraphT = `Total time : ${convertedMin} minutes ${remainingSec} seconds`;
+let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
 document.getElementById("time").innerHTML = paragraphT;
 
-let paragraphEx = `Total XP gain v ${totalExp} XP`;
+let paragraphEx = ` <span style="color: orange">${totalExp}</span> XP`;
 document.getElementById("exp").innerHTML = paragraphEx;
 
-let paragraphEn = `Total energy spent : ${totalEnergy} energy`;
+let paragraphEn = ` <span style="color: orange"> ${totalEnergy}</span> energy`;
 document.getElementById("energy").innerHTML = paragraphEn;
 });
 

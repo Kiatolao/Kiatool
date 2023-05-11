@@ -11,15 +11,13 @@
 <body>
    <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">SFTool</a>
+  <a class="navbar-brand" href="#">KIATools</a>
 </nav>
 
-
-      <div class="row mt-3 mx-auto">
-        <div class="col"><h1>Campaign XP Calculator</h1>
-        </div>
-      </div>
-    
+<div class="row mt-3 mx-auto">
+   <div class="col"><h1>Campaign XP Calculator</h1>
+   </div>
+</div>
     
   <!--Selected items-->  
   <div class="row mt-4 mx-auto">
@@ -65,7 +63,7 @@
   <div class="row mt-4 mx-auto">
     <div>  
       <div class="col mx-auto">
-      <h3>Average completion time :</h3>
+      <h3 class="orange">Average completion time :</h3>
       <div class="row mx-auto">
         <input type="number" min="0" step="1" class="mr-2" id="minutes">
       <h4>Minutes</h4>
@@ -74,12 +72,12 @@
       </div>
     </div>
     <div class="col mx-auto mt-3">
-      <h3>Number of multi-battle :</h3>
+      <h3 class="orange">Number of multi-battle :</h3>
       <input type="number" min="0" step="1"  id="multis">
     </div>
     <div class="col mx-auto mt-3">
-      <h3>Loading time : <br> <i>(Countdown + loading, 15s by default)</i></h3>
-      <input type="number" min="0" step="1"  id="loading" value="15">
+      <h3 class="orange">Loading time :</h3><h3> <i>(Countdown + loading, 8s by default)</i></h3>
+      <input type="number" min="0" step="1"  id="loading" value="8">
     </div>
     </div>
     </div>
@@ -92,13 +90,13 @@
     </div>
   </div>
   
- <div class="m-3"> 
+ <div class="ml-3"> 
   <h3 class="inline">Estimated time : </h3><h3 class="inline ml-1" id="time"></h3>
  </div>
- <div class="m-3"> 
+ <div class="ml-3">
   <h3 class="inline">XP gain : </h3><h3 class="inline ml-1" id="exp"></h3>
  </div>
- <div class="m-3"> 
+ <div class="ml-3"> 
   <h3 class="inline">Energy spent : </h3><h3 class="inline ml-1" id="energy"></h3>
  </div>
  

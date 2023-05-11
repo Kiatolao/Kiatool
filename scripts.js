@@ -202,6 +202,7 @@ updateStage();
 calculate.addEventListener("click", () => {
 
   let convertedMin;
+  let convertedHour;
   let totalExp;
   let remainingSec;
 
@@ -216,10 +217,10 @@ calculate.addEventListener("click", () => {
     remainingSec = totalTime % 60;
 
     if (convertedMin >= 60) {
-      let convertedHours = Math.floor(convertedMin / 60);
+      convertedHour = Math.floor(convertedMin / 60);
       convertedMin = convertedMin % 60;
 
-      let paragraphT = `<span style="color: orange">${convertedHours}</span> hours <span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: orange">${convertedHour}</span> hour <span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     } else {
       let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
@@ -254,9 +255,7 @@ calculate.addEventListener("click", () => {
 
   let paragraphEn = `<span style="color: orange"> ${totalEnergy}</span> energy`;
   document.getElementById("energy").innerHTML = paragraphEn;
-
 });
-
 
 //Reset all value/option select
 reset.addEventListener("click", () => {

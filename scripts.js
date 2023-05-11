@@ -8,7 +8,14 @@ const hard = [1448,1476,1502,1528,1556,1582,1610,1507,1535,1561,1589,1615,1642,1
 1865,1892,1919,1946,1973,1999,2027,
 1925,1952,1978,2006,2032,2059,2086,
 1985,2011,2039,2065,2092,2119,2145];
-const brutal = [];
+const brutal = [2360,2414,2468,2521,2574,2628,2682,2539,2592,2646,2700,2754,2807,2860,2717,2771,2825,2878,2932,2986,3040,
+2897,2950,3003,3057,3111,3164,3218,
+3075,3129,3183,3236,3289,3343,3397,
+3254,3307,3361,3415,3469,3522,3575,
+3432,3486,3540,3593,3647,3701,3755,
+3612,3665,3718,3772,3826,3879,3933,
+3790,3844,3898,3951,4004,4058,4112,
+3969,4022,4076,4130,4184,4237,4290];
 const nightmare = [];
 
 const selectedArray = document.getElementById("selectedArray");
@@ -48,7 +55,7 @@ timeLoad.addEventListener("input", () => {
   myLoad = timeLoad.value;
 });
 
-// Updates energy cost when an event is triggered
+// Updates energy cost on event
 function updateEnergy() {
   if (selectedArray.value === "normal") {
     if (selectedStage.value === "sta7") {
@@ -77,7 +84,7 @@ function updateEnergy() {
   }
 };
 
-// Update exp when an event is triggered
+// Update exp on event
 function updateStage() {
   let array = normal;
   if (selectedArray.value === "normal") {

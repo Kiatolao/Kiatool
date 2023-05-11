@@ -201,50 +201,62 @@ updateStage();
 // Calculate total time/xp/energy
 calculate.addEventListener("click", () => {
 
-let convertedMin;
-let totalExp;
-let remainingSec;
+  let convertedMin;
+  let totalExp;
+  let remainingSec;
 
-// Total time formula
-let totalTimeMin = myMin * myRun;
-let totalTimeSec = mySec * myRun;
-let totalTimeLoad = myLoad * myRun;
-let totalTime = (totalTimeMin * 60) + totalTimeSec + totalTimeLoad;
+  // Total time formula
+  let totalTimeMin = myMin * myRun;
+  let totalTimeSec = mySec * myRun;
+  let totalTimeLoad = myLoad * myRun;
+  let totalTime = (totalTimeMin * 60) + totalTimeSec + totalTimeLoad;
 
-if (totalTime >= 60) {
-  convertedMin = Math.floor(totalTime / 60);
-  remainingSec = totalTime % 60;
-} else {
-  convertedMin = 0;
-  remainingSec = totalTime;
-};
+  if (totalTime >= 60) {
+    convertedMin = Math.floor(totalTime / 60);
+    remainingSec = totalTime % 60;
 
-//Total energy formula
-totalEnergy = energy * myRun;
-totalExp = stage * myRun;
-console.log(totalEnergy, totalExp)
+    if (convertedMin >= 60) {
+      let convertedHours = Math.floor(convertedMin / 60);
+      convertedMin = convertedMin % 60;
 
-//Error alert when missing parameter
-if (
+      let paragraphT = `<span style="color: orange">${convertedHours}</span> hours <span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+      document.getElementById("time").innerHTML = paragraphT;
+    } else {
+      let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+      document.getElementById("time").innerHTML = paragraphT;
+    }
+  } else {
+    convertedMin = 0;
+    remainingSec = totalTime;
+
+    let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+    document.getElementById("time").innerHTML = paragraphT;
+  }
+
+  // Total energy formula
+  totalEnergy = energy * myRun;
+  totalExp = stage * myRun;
+  console.log(totalEnergy, totalExp)
+
+  // Error alert when missing parameter
+  if (
     isNaN(convertedMin) ||
     isNaN(remainingSec) ||
     isNaN(totalExp) ||
     isNaN(totalEnergy)
   ) {
-    alert("One or more parameters are missing, please select a difficulty, chapter, stage and fill the inputs.");
+    alert("One or more parameters are missing, please select a difficulty, chapter, stage, and fill the inputs.");
   }
 
-//Results display
-let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
-document.getElementById("time").innerHTML = paragraphT;
+  // Results display
+  let paragraphEx = `<span style="color: orange">${totalExp}</span> XP`;
+  document.getElementById("exp").innerHTML = paragraphEx;
 
-let paragraphEx = `<span style="color: orange">${totalExp}</span> XP`;
-document.getElementById("exp").innerHTML = paragraphEx;
-
-let paragraphEn = `<span style="color: orange"> ${totalEnergy}</span> energy`;
-document.getElementById("energy").innerHTML = paragraphEn;
+  let paragraphEn = `<span style="color: orange"> ${totalEnergy}</span> energy`;
+  document.getElementById("energy").innerHTML = paragraphEn;
 
 });
+
 
 //Reset all value/option select
 reset.addEventListener("click", () => {

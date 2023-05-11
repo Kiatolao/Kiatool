@@ -224,14 +224,49 @@ totalEnergy = energy * myRun;
 totalExp = stage * myRun;
 console.log(totalEnergy, totalExp)
 
+//Error alert when missing parameter
+if (
+    isNaN(convertedMin) ||
+    isNaN(remainingSec) ||
+    isNaN(totalExp) ||
+    isNaN(totalEnergy)
+  ) {
+    alert("One or more parameters are missing, please select a difficulty, chapter, stage and fill the inputs.");
+  }
+
 //Results display
 let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
 document.getElementById("time").innerHTML = paragraphT;
 
-let paragraphEx = ` <span style="color: orange">${totalExp}</span> XP`;
+let paragraphEx = `<span style="color: orange">${totalExp}</span> XP`;
 document.getElementById("exp").innerHTML = paragraphEx;
 
-let paragraphEn = ` <span style="color: orange"> ${totalEnergy}</span> energy`;
+let paragraphEn = `<span style="color: orange"> ${totalEnergy}</span> energy`;
 document.getElementById("energy").innerHTML = paragraphEn;
+
 });
 
+//Reset all value/option select
+reset.addEventListener("click", () => {
+  
+  timeCompMin.value = "";
+  timeCompSec.value = "";
+  multiRun.value = "";
+
+  myMin = "";
+  mySec = "";
+  myRun = "";
+  tableau = undefined ;
+  chapter = [0];
+  stage = undefined;
+  energy = undefined;
+  totalEnergy = undefined;
+
+  document.getElementById("time").innerHTML = "";
+  document.getElementById("exp").innerHTML = "";
+  document.getElementById("energy").innerHTML = "";
+  
+  selectedArray.selectedIndex = 0;
+  selectedSlice.selectedIndex = 0;
+  selectedStage.selectedIndex = 0;
+});

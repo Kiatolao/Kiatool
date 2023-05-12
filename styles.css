@@ -1,12 +1,13 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body {
     background-color: rgb(43, 41, 41);
+    font-family: Inter;
 }
 
 h1 {
     color: aliceblue;
     font-size: 18px;
+    font-weight: bold;
 }
 
 h3 {
@@ -39,5 +40,9 @@ i {
 }
 
 .orange {
-  color : orange;
+  color :;
+}
+
+.form-select {
+  font-family: Inter;
 }

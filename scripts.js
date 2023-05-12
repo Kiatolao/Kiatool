@@ -220,17 +220,17 @@ calculate.addEventListener("click", () => {
       convertedHour = Math.floor(convertedMin / 60);
       convertedMin = convertedMin % 60;
 
-      let paragraphT = `<span style="color: orange">${convertedHour}</span> hour <span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: #eacf72">${convertedHour}</span> hour <span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     } else {
-      let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     }
   } else {
     convertedMin = 0;
     remainingSec = totalTime;
 
-    let paragraphT = `<span style="color: orange">${convertedMin}</span> minutes <span style="color: orange">${remainingSec}</span> seconds`;
+    let paragraphT = `<span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
     document.getElementById("time").innerHTML = paragraphT;
   }
 
@@ -250,10 +250,10 @@ calculate.addEventListener("click", () => {
   }
 
   // Results display
-  let paragraphEx = `<span style="color: orange">${totalExp}</span> XP`;
+  let paragraphEx = `<span style="color: #eacf72">${totalExp}</span> XP`;
   document.getElementById("exp").innerHTML = paragraphEx;
 
-  let paragraphEn = `<span style="color: orange"> ${totalEnergy}</span> energy`;
+  let paragraphEn = `<span style="color: #eacf72"> ${totalEnergy}</span> energy`;
   document.getElementById("energy").innerHTML = paragraphEn;
 });
 

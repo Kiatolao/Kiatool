@@ -11,7 +11,7 @@
 <body>
    <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">KIATools</a>
+  <a class="navbar-brand" href="#">KIAtools</a>
 </nav>
 
 <div class="row mt-3 mx-auto">
@@ -61,7 +61,7 @@
     
   <!--Inputs-->
   <div class="row mt-4 mx-auto">
-    <div>  
+    <div class="">  
       <div class="col mx-auto">
       <h3 class="orange">Average completion time :</h3>
       <div class="row mx-auto">
@@ -71,7 +71,13 @@
       <h4>seconds</h4>
       </div>
     </div>
-    <div class="col mx-auto mt-3">
+<div class="col mx-auto mt-3">
+ <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Multi battle</option>
+  <option value="1">XP</option>
+  <option value="2">Time</option>
+  <option value="3">Energy</option>
+</select>
       <h3 class="orange">Number of multi-battle :</h3>
       <input type="number" min="0" step="1"  id="multis">
     </div>
@@ -79,17 +85,18 @@
       <h3 class="orange">Loading time :</h3><h3> <i>(Countdown + loading, 8s by default)</i></h3>
       <input type="number" min="0" step="1"  id="loading" value="8">
     </div>
-    </div>
-    </div>
+  </div>
+</div>
  <div class="row">
     <div class="m-4">
-      <button type="button" class="btn btn-secondary btn-sm" id="calculatebtn">Calculate</button>
+      <button type="button" class="btn btn-warning btn-sm" id="calculatebtn">Calculate</button>
     </div>
     <div class="m-4">
-      <button type="button" class="btn btn-secondary btn-sm" id="resetbtn"> Reset </button>
+      <button type="button" class="btn btn-light btn-sm" id="resetbtn"> Reset </button>
     </div>
   </div>
   
+ <div class=""> 
  <div class="ml-3"> 
   <h3 class="inline">Estimated time : </h3><h3 class="inline ml-1" id="time"></h3>
  </div>
@@ -98,6 +105,7 @@
  </div>
  <div class="ml-3"> 
   <h3 class="inline">Energy spent : </h3><h3 class="inline ml-1" id="energy"></h3>
+ </div>
  </div>
  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

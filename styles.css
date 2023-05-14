@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body {
-    background-color: rgb(43, 41, 41);
+  background-image: linear-gradient(to right bottom, #2c2d2e, #2e343a, #2f3b47, #304154, #314861);
     font-family: Inter;
 }
 
@@ -23,7 +23,7 @@ h4 {
 }
 
 input {
-    width: 40px;
+    width: 50px;
     height: 20px;
 }
 
@@ -39,9 +39,6 @@ i {
   display: inline-block;
 }
 
-.orange {
-  color :;
-}
 
 .form-select {
   font-family: Inter;

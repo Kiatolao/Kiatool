@@ -290,3 +290,20 @@ reset.addEventListener("click", () => {
   selectedSlice.selectedIndex = 0;
   selectedStage.selectedIndex = 0;
 });
+
+function moveSpaceship() {
+  var spaceship = document.querySelector('.spaceship');
+  spaceship.style.left = '-100px';
+  spaceship.style.animation = 'spaceshipMove 3s linear'; // Set animation properties
+
+  setTimeout(function() {
+    spaceship.style.animation = 'none'; // Disable the animation
+    setTimeout(function() {
+      spaceship.style.animation = 'spaceshipMove 3s linear'; // Re-enable the animation
+    }, 100);
+  }, 10000); // Delay for 10 seconds before resetting the animation
+}
+
+moveSpaceship(); // Initial spaceship appearance
+
+setInterval(moveSpaceship, 30000);

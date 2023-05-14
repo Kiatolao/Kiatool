@@ -1,11 +1,175 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
-  background-image: linear-gradient(to right bottom, #2c2d2e, #2e343a, #2f3b47, #304154, #314861);
-    font-family: Inter;
+  background: radial-gradient(circle at bottom, rgb(40, 40, 50) 0, black 100%);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.space {
+  opacity: 20%;
+  background: rgba(25, 12, 74, 0.1) center / 200px 200px round;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.stars1 {
+  animation: space 180s ease-in-out infinite;
+  background-image:
+    radial-gradient(
+      1px 1px at 25px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1px 1px at 50px 25px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1px 1px at 125px 20px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 50px 75px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2px 2px at 15px 125px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2.5px 2.5px at 110px 80px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    );
+}
+.stars2 {
+  animation: space 240s ease-in-out infinite;
+  background-image:
+    radial-gradient(
+      1px 1px at 75px 125px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1px 1px at 100px 75px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 199px 100px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2px 2px at 20px 50px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2.5px 2.5px at 100px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2.5px 2.5px at 5px 5px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    );
+}
+.stars3 {
+  animation: space 300s ease-in-out infinite;
+  background-image:
+    radial-gradient(
+      1px 1px at 10px 10px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1px 1px at 150px 150px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 60px 170px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      1.5px 1.5px at 175px 180px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2px 2px at 195px 95px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      2.5px 2.5px at 95px 145px, 
+      white, 
+      rgba(255, 255, 255, 0)
+    );
+}
+
+@keyframes space {
+  40% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  60% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spaceship {
+  position: absolute;
+  top: 20%;
+  left: -100px; /* Starting position off-screen */
+  width: 50px;
+  height: 25px;
+  background-image: url('space.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  border-radius: 5px;
+}
+
+@keyframes spaceshipMove {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: calc(100% + 1000px); /* Moves the spaceship across the screen */
+  }
+}
+
+
+.navbar {
+  opacity: 80%;
+}
+
+.block {
+
+    padding:2px;
+    background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);
+    opacity: 90%;
+    vertical-align:middle;
+    width: 400px;
+
 }
 
 h1 {
-    color: aliceblue;
+    color: rgb(255, 136, 0);
     font-size: 18px;
     font-weight: bold;
 }
@@ -15,6 +179,10 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     
+}
+
+.orange {
+  color: hwb(209 37% 8% / 0.863);
 }
 
 h4 {

@@ -3,7 +3,8 @@
 
 body {
   background: radial-gradient(circle at bottom, rgb(40, 40, 50) 0, black 100%);
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   font-family: 'Inter';
 }
 
@@ -19,7 +20,10 @@ body {
 }
 
 .wrapper {
-  min-height: 85%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
 }
 
@@ -39,6 +43,7 @@ body {
 .space {
   opacity: 20%;
   background: rgba(25, 12, 74, 0.1) center / 200px 200px round;
+
   bottom: 0;
   left: 0;
   position: absolute;
@@ -153,9 +158,8 @@ body {
 }
 
 .block {
-
-    padding:2px;
-    background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);
+    background-image: url(BG_horizontal.png);
+    background-position: right;
     opacity: 80%;
     vertical-align:middle;
     max-height: 600px;
@@ -193,6 +197,12 @@ h4 {
   font-size: 14px;
 }
 
+.sbf {
+  width: 50%;
+  max-width: 350px;
+  margin-top: 1rem;
+}
+
 input {
     width: 50px;
     height: 20px;
@@ -227,9 +237,8 @@ i {
   }
 }
 
-
-
 .footer {
+  flex-shrink: 0;
   min-height: 50px;
   opacity: 90%;
   background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);

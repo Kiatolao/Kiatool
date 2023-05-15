@@ -7,6 +7,11 @@ body {
   font-family: 'Inter';
 }
 
+.logokt {
+  width: 20px;
+  margin-right: 10px;
+}
+
 .wrapper {
   min-height: 85%;
   display: flex;

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Press+Start+2P&family=Russo+One&display=swap');
 
 body {
-  background: radial-gradient(circle at bottom, rgb(40, 40, 50) 0, black 100%);
+  background: radial-gradient(circle at bottom, rgb(24, 35, 121) 0, rgb(17, 17, 17) 100%);
   height: auto;
   min-height: 100vh;
   font-family: 'Inter';
@@ -24,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
 
 .container {
@@ -42,7 +41,7 @@ body {
 
 .space {
   opacity: 20%;
-  background: rgba(25, 12, 74, 0.1) center / 200px 200px round;
+  background: rgba(28, 15, 75, 0.1) center / 200px 200px round;
 
   bottom: 0;
   left: 0;
@@ -158,9 +157,9 @@ body {
 }
 
 .block {
-    background-image: url(BG_horizontal.png);
+background-image: url(BG_horizontal.png);
     background-position: right;
-    opacity: 80%;
+    opacity: 90%;
     vertical-align:middle;
     max-height: 600px;
 
@@ -231,9 +230,9 @@ i {
   font-family: Inter;
 }
 
-@media (min-width: 450px)  {
+@media (min-width: 500px)  {
   .block {
-    max-width: 450px;
+    max-width: 500px;
   }
 }
 

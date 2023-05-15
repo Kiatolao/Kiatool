@@ -140,46 +140,6 @@ body {
   }
 }
 
-.spaceship {
-  position: absolute;
-  top: 20%;
-  left: -100px; /* Starting position off-screen */
-  width: 50px;
-  height: 25px;
-  background-image: url('space.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover;
-  border-radius: 5px;
-}
-
-@keyframes spaceshipMove {
-  0% {
-    left: -100px;
-  }
-  100% {
-    left: calc(100% + 1000px); /* Moves the spaceship across the screen */
-  }
-}
-
-.spaceship2 {
-  position: absolute;
-  top: 80%;
-  right: -100px; /* Starting position off-screen */
-  width: 100px;
-  height: 50px;
-  background-image: url('fighter.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover;
-  border-radius: 5px;
-}
-
-@keyframes spaceshipMove2 {
-  0% {
-    right: -100px;
-  }
-  100% {
-    right: calc(100% + 1000px); /* Moves the spaceship across the screen */
-  }
-}
-
 
 .navbar {
   opacity: 80%;
@@ -193,7 +153,6 @@ body {
     background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);
     opacity: 80%;
     vertical-align:middle;
-    width: 400px;
 
 }
 

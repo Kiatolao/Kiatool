@@ -291,36 +291,4 @@ reset.addEventListener("click", () => {
   selectedStage.selectedIndex = 0;
 });
 
-function moveSpaceship() {
-  var spaceship = document.querySelector('.spaceship');
-  spaceship.style.left = '-100px';
-  spaceship.style.animation = 'spaceshipMove 3s linear'; // Set animation properties
 
-  setTimeout(function() {
-    spaceship.style.animation = 'none'; // Disable the animation
-    setTimeout(function() {
-      spaceship.style.animation = 'spaceshipMove 3s linear'; // Re-enable the animation
-    }, 100);
-  }, 10000); // Delay for 10 seconds before resetting the animation
-}
-
-moveSpaceship(); // Initial spaceship appearance
-
-setInterval(moveSpaceship, 30000);
-
-function moveSpaceship2() {
-  var spaceship2 = document.querySelector('.spaceship2');
-  spaceship2.style.right = '-100px';
-  spaceship2.style.animation = 'spaceshipMove2 5s linear'; // Set animation properties
-
-  setTimeout(function() {
-    spaceship2.style.animation = 'none'; // Disable the animation
-    setTimeout(function() {
-      spaceship2.style.animation = 'spaceshipMove2 10s linear'; // Re-enable the animation
-    }, 100);
-  }, 10000); // Delay for 10 seconds before resetting the animation
-}
-
-moveSpaceship2(); // Initial spaceship appearance
-
-setInterval(moveSpaceship2, 45000);

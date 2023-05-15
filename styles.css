@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Press+Start+2P&family=Russo+One&display=swap');
 
 body {
-  background: radial-gradient(circle at bottom, rgb(24, 35, 121) 0, rgb(17, 17, 17) 100%);
+  background: radial-gradient(circle at bottom, rgb(29, 36, 87) 0, rgb(17, 17, 17) 100%);
   height: auto;
   min-height: 100vh;
   font-family: 'Inter';

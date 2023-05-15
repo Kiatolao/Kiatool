@@ -229,17 +229,17 @@ calculate.addEventListener("click", () => {
       convertedHour = Math.floor(convertedMin / 60);
       convertedMin = convertedMin % 60;
 
-      let paragraphT = `<span style="color: #eacf72">${convertedHour}</span> hour <span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: #FFD900">${convertedHour}</span> hour <span style="color: #FFD900">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     } else {
-      let paragraphT = `<span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: #FFD900">${convertedMin}</span> minutes <span style="color: #FFD900">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     }
   } else {
     convertedMin = 0;
     remainingSec = totalTime;
 
-    let paragraphT = `<span style="color: #eacf72">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
+    let paragraphT = `<span style="color: #FFD900">${convertedMin}</span> minutes <span style="color: #FFD900">${remainingSec}</span> seconds`;
     document.getElementById("time").innerHTML = paragraphT;
   }
 
@@ -259,10 +259,10 @@ calculate.addEventListener("click", () => {
   }
 
   // Results display
-  let paragraphEx = `<span style="color: #eacf72">${totalExp}</span> XP`;
+  let paragraphEx = `<span style="color: #FFD900">${totalExp}</span> XP`;
   document.getElementById("exp").innerHTML = paragraphEx;
 
-  let paragraphEn = `<span style="color: #eacf72"> ${totalEnergy}</span> energy`;
+  let paragraphEn = `<span style="color: #FFD900"> ${totalEnergy}</span> energy`;
   document.getElementById("energy").innerHTML = paragraphEn;
 });
 
@@ -307,3 +307,20 @@ function moveSpaceship() {
 moveSpaceship(); // Initial spaceship appearance
 
 setInterval(moveSpaceship, 30000);
+
+function moveSpaceship2() {
+  var spaceship2 = document.querySelector('.spaceship2');
+  spaceship2.style.right = '-100px';
+  spaceship2.style.animation = 'spaceshipMove2 5s linear'; // Set animation properties
+
+  setTimeout(function() {
+    spaceship2.style.animation = 'none'; // Disable the animation
+    setTimeout(function() {
+      spaceship2.style.animation = 'spaceshipMove2 10s linear'; // Re-enable the animation
+    }, 100);
+  }, 10000); // Delay for 10 seconds before resetting the animation
+}
+
+moveSpaceship2(); // Initial spaceship appearance
+
+setInterval(moveSpaceship2, 45000);

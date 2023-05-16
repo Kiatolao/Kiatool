@@ -202,6 +202,10 @@ h4 {
   margin-top: 1rem;
 }
 
+.result {
+  color: rgb(255, 153, 10);
+}
+
 input {
     width: 50px;
     height: 20px;

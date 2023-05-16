@@ -166,7 +166,7 @@ background-image: url(BG_horizontal.png);
 }
 
 h1 {
-    color: aliceblue;
+    color: rgb(255, 153, 10);
     font-size: 18px;
     font-weight: bold;
 }
@@ -188,7 +188,7 @@ h3 {
 }
 
 .orange {
-  color: hwb(249 60% 2% / 0.863);
+  color: aliceblue;
 }
 
 h4 {

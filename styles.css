@@ -206,9 +206,20 @@ h4 {
   color: rgb(255, 153, 10);
 }
 
+label {
+  color: #f0f8ff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 input {
     width: 50px;
     height: 20px;
+}
+
+.small-checkbox .form-check-input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
 }
 
 .btn {

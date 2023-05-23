@@ -46,6 +46,7 @@ let chapter = [];
 let stage;
 let energy;
 let totalEnergy;
+let checkbox = document.getElementById("defaultCheck1");
 
 //updated input
 timeCompMin.addEventListener("input", () => {
@@ -229,7 +230,7 @@ calculate.addEventListener("click", () => {
       convertedHour = Math.floor(convertedMin / 60);
       convertedMin = convertedMin % 60;
 
-      let paragraphT = `<span style="color: rgb(255, 153, 10)">${convertedHour}</span> hour <span style="color: rgb(255, 153, 10)">${convertedMin}</span> minutes <span style="color: #eacf72">${remainingSec}</span> seconds`;
+      let paragraphT = `<span style="color: rgb(255, 153, 10)">${convertedHour}</span> hour <span style="color: rgb(255, 153, 10)">${convertedMin}</span> minutes <span style="color: rgb(255, 153, 10)">${remainingSec}</span> seconds`;
       document.getElementById("time").innerHTML = paragraphT;
     } else {
       let paragraphT = `<span style="color: rgb(255, 153, 10)">${convertedMin}</span> minutes <span style="color: rgb(255, 153, 10)">${remainingSec}</span> seconds`;
@@ -247,7 +248,7 @@ calculate.addEventListener("click", () => {
   totalEnergy = energy * myRun;
   totalExp = stage * myRun;
   console.log(totalEnergy, totalExp)
-
+  
   // Error alert when missing parameter
   if (
     isNaN(convertedMin) ||
@@ -259,7 +260,7 @@ calculate.addEventListener("click", () => {
   }
 
   // Results display
-  let paragraphEx = `<span style="color: rgb(255, 153, 10)">${totalExp}</span> XP`;
+  let paragraphEx = `<span style="color: rgb(255, 153, 10)">${checkbox.checked ? totalExp * 1.3 : totalExp}</span> XP`;
   document.getElementById("exp").innerHTML = paragraphEx;
 
   let paragraphEn = `<span style="color: rgb(255, 153, 10)"> ${totalEnergy}</span> energy`;
@@ -281,6 +282,7 @@ reset.addEventListener("click", () => {
   stage = undefined;
   energy = undefined;
   totalEnergy = undefined;
+  checkbox.checked = false;
 
   document.getElementById("time").innerHTML = "";
   document.getElementById("exp").innerHTML = "";

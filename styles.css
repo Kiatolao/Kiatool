@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Press+Start+2P&family=Russo+One&display=swap');
 
+
 body {
   background: radial-gradient(circle at bottom, rgb(25, 33, 75) 0, rgb(17, 17, 17) 100%);
   height: auto;
   min-height: 100vh;
   font-family: 'Inter';
+
 }
 
 .logokt {
@@ -43,10 +45,10 @@ body {
 .space {
   opacity: 20%;
   background: rgba(28, 15, 75, 0.1) center / 200px 200px round;
-
+  background-attachment: fixed;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position:fixed;
   right: 0;
   top: 0;
 }
@@ -150,6 +152,8 @@ body {
       rgba(255, 255, 255, 0)
     );
 }
+
+
 
 .navbar {
   width: 100%;

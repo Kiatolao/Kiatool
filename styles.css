@@ -15,6 +15,7 @@ body {
   transform: scaleX(-1);
 }
 
+
 .icon {
   transform: scaleX(-1);
 }
@@ -151,19 +152,24 @@ body {
 }
 
 .navbar {
-  opacity: 80%;
+  width: 100%;
   background: #612E72;
   background: linear-gradient(135deg, #612E72, #455675);
 }
 
 .block {
-background-image: url(BG_horizontal.png);
+background-image: url(images/BG_horizontal.png);
     background-position: right;
     opacity: 90%;
     vertical-align:middle;
     max-height: 600px;
 
 }
+
+.block2 {
+  background-image: url(images/BG_horizontal.png);
+      opacity: 90%;
+  }
 
 h1 {
     color: rgb(255, 153, 10);
@@ -203,7 +209,7 @@ h4 {
 }
 
 .result {
-  color: rgb(255, 153, 10);
+  color: rgb(244, 146, 10);
 }
 
 label {
@@ -252,8 +258,109 @@ i {
 }
 
 .footer {
+  position: fixe;
+  bottom: 0;
+  width: 100%;
   flex-shrink: 0;
   min-height: 50px;
   opacity: 90%;
   background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+
+  border-bottom-right-radius: 10px;
+}
+
+.card img {
+  width: auto;
+  height: auto;
+  display: block;
+  box-shadow: #292828;
+}
+
+.card::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 17px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'inter';
+  text-align: center;
+  text-shadow: #2c2c2c;
+}
+
+.legendary-card {
+  border: 2px solid rgb(235, 160, 120);
+}
+
+.epic-card {
+  border: 2px solid rgba(211, 108, 230, 0.8);
+}
+
+.rare-card {
+  border: 2px solid rgba(103, 164, 233, 0.8);
+}
+
+
+.legendary-card::after {
+  background-image: linear-gradient(to bottom, rgba(58, 57, 55, 0.1), rgba(92, 78, 49, 0.4), rgba(130, 97, 41, 0.5), rgba(172, 116, 30, 0.6), rgb(235, 146, 62));
+
+}
+
+.epic-card::after {
+  background-image: linear-gradient(to bottom, rgba(56, 56, 56, 0.1), rgba(73, 63, 98, 0.4), rgba(98, 66, 137, 0.5), rgba(133, 62, 172, 0.6), rgba(177, 41, 201, 0.7));
+}
+
+.rare-card::after {
+  background-image: linear-gradient(to bottom, rgba(56, 56, 56, 0.1), rgba(73, 74, 95, 0.4), rgba(83, 94, 137, 0.5), rgba(83, 116, 182, 0.6), rgba(62, 140, 230, 0.7));
+}
+
+.role-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(255, 255, 255, 1); /* Couleur de l'icône avec transparence */
+  font-size: 20px;
+
+}
+
+.affinity-icon {
+  position: absolute;
+  top: 11px;
+  left: 7px;
+  width: 26px;
+  height: 27px;
+  border-radius: 1px;
+
+}
+
+.antimatter-affinity {
+  background-color: rgba(185, 54, 185, 0.7);
+}
+
+.chemical-affinity {
+  background-color: rgb(47, 123, 10, 0.7);
+}
+
+.thermal-affinity {
+  background-color: rgb(255, 98, 0, 0.7);
+}
+
+.electric-affinity {
+  background-color: rgb(34, 75, 211, 0.7);
+}
+

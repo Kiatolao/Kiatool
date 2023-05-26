@@ -3,7 +3,7 @@
 
 
 body {
-  background: radial-gradient(circle at bottom, rgb(25, 33, 75) 0, rgb(17, 17, 17) 100%);
+  background: radial-gradient(circle at bottom, rgb(29, 15, 34) 0, rgb(17, 17, 17) 100%);
   height: auto;
   min-height: 100vh;
   font-family: 'Inter';
@@ -271,17 +271,18 @@ i {
   background-image: linear-gradient(to left top, #2f2f2f, #2d2d2d, #2c2b2c, #2a2a2a, #292828);
 }
 
+/*Gallery and card settings*/
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
   border-radius: 0;
-
   border-bottom-right-radius: 10px;
 }
 
@@ -309,6 +310,7 @@ i {
 
 .legendary-card {
   border: 2px solid rgb(235, 160, 120);
+  
 }
 
 .epic-card {

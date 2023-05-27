@@ -384,7 +384,7 @@ i {
 
 /*checkbox*/
 
-#cardFilter {
+#cardFilter, #resetButton {
   margin-left: auto;
   margin-right: auto;
   display: block;

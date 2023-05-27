@@ -1,0 +1,41 @@
+Buff:
+attack up 2
+attack up 3
+barrier recharging
+blast
+block attacks
+cheat death
+crit damage up 2
+crit damage up 3
+crit rate up 2
+crit rate up 3
+defense up 
+defense up 2
+defense up 3
+everliving regeneration 2
+gelecek contagion 2
+hacking up
+hacking up 2
+hacking up 3
+inc. damage down 2
+inc. damage down 3
+legion discipline 2
+legion discipline 3
+marauder rage 2
+marauder rage 3
+matrix defense
+out. damage up 2
+out. damage up 3
+overload
+repair over time
+repair over time 2
+security up 3
+shield
+speed up
+stealth
+terran bolster
+terran tenacity
+tianchao precision 2
+warding screen
+xaoc swiftness 2
+xaoc swiftness 3

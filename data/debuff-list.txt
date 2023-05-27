@@ -1,0 +1,29 @@
+Debuff:
+attack down 2
+attack down 3
+block buff
+bomb
+bomb 2
+bomb 3
+concentrate fire
+corrosion
+corrosion 2
+corrosion 3
+crit rate down 3
+defense down
+defense down 2
+defense down 3
+disable
+inc. repair down 2
+inc. repair down 3
+inferno
+inferno 2
+inferno 3
+out. damage down 2
+out. damage down
+provoke
+repair down 2
+security down 3
+speed down
+speed down 2
+stasis

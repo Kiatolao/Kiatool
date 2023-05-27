@@ -1,0 +1,20 @@
+Battle skill list :
+bypass defense
+bypass shield
+damage reduction
+detonate bomb
+detonate corrosion
+extra action
+fill charge
+lose charge
+remove buff
+remove debuff
+repair
+repair self
+taunt
+
+
+
+
+
+

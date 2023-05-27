@@ -1,4 +1,4 @@
-const hangar = [
+var hangar = [
     {
         name: "Aegis",
         image: "images/chars/aegis.png",
@@ -489,7 +489,7 @@ const hangar = [
     basic: "",
     charged: "disable",
     passive: ["shield", "atlas coordination 2"],
-    refit: "tianchao precision 2",
+    refit: "",
     hp: 13366,
     attack: 4951,
     defense: 1537,
@@ -1562,63 +1562,94 @@ const hangar = [
   
 ]
 
+const galleryContainer = document.querySelector(".gallery");
+  
+hangar.forEach((ship) => {
+  
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-//Gallery
-  const galleryContainer = document.querySelector(".gallery");
+  if (ship.rarity.toLowerCase() === "legendary") {
+    card.classList.add("legendary-card");
+  } else if (ship.rarity.toLowerCase() === "epic") {
+    card.classList.add("epic-card");
+  } else if (ship.rarity.toLowerCase() === "rare") {
+    card.classList.add("rare-card");
+  }
+
+  card.setAttribute("data-name", ship.name);
+
+  const affinityIcon = document.createElement("div");
+  affinityIcon.classList.add("affinity-icon");
+
+  if (ship.affinity.toLowerCase() === "antimatter") {
+    affinityIcon.classList.add("antimatter-affinity");
+  } else if (ship.affinity.toLowerCase() === "chemical") {
+    affinityIcon.classList.add("chemical-affinity");
+  } else if (ship.affinity.toLowerCase() === "thermal") {
+    affinityIcon.classList.add("thermal-affinity");
+  } else if (ship.affinity.toLowerCase() === "electric") {
+    affinityIcon.classList.add("electric-affinity");
+  }
+
+  const roleIcon = document.createElement("i");
+  roleIcon.classList.add("role-icon");
+
+  if (ship.role === "Supporter") {
+    roleIcon.classList.add("bi", "bi-plus-circle");
+  } else if (ship.role === "Defender") {
+    roleIcon.classList.add("bi", "bi-shield-shaded");
+  } else if (ship.role === "Attacker") {
+    roleIcon.classList.add("bi", "bi-lightning-charge-fill");
+  } else if (ship.role === "Debuffer") {
+    roleIcon.classList.add("bi", "bi-bug-fill");
+  } else {
+    roleIcon.classList.add("bi", "bi-question-circle-fill");
+  }
+
+  card.appendChild(affinityIcon);
+  card.appendChild(roleIcon);
+
+  const image = document.createElement("img");
+  image.src = ship.image;
+  image.alt = ship.name;
   
-  hangar.forEach((ship) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
+  card.appendChild(image);
   
-    if (ship.rarity.toLowerCase() === "legendary") {
-      card.classList.add("legendary-card");
-    } else if (ship.rarity.toLowerCase() === "epic") {
-      card.classList.add("epic-card");
-    } else if (ship.rarity.toLowerCase() === "rare") {
-      card.classList.add("rare-card");
-    }
-  
-    card.setAttribute("data-name", ship.name);
-  
-    const affinityIcon = document.createElement("div");
-    affinityIcon.classList.add("affinity-icon");
-  
-    if (ship.affinity.toLowerCase() === "antimatter") {
-      affinityIcon.classList.add("antimatter-affinity");
-    } else if (ship.affinity.toLowerCase() === "chemical") {
-      affinityIcon.classList.add("chemical-affinity");
-    } else if (ship.affinity.toLowerCase() === "thermal") {
-      affinityIcon.classList.add("thermal-affinity");
-    } else if (ship.affinity.toLowerCase() === "electric") {
-      affinityIcon.classList.add("electric-affinity");
-    }
-  
-    const roleIcon = document.createElement("i");
-    roleIcon.classList.add("role-icon");
-  
-    if (ship.role === "Supporter") {
-      roleIcon.classList.add("bi", "bi-plus-circle");
-    } else if (ship.role === "Defender") {
-      roleIcon.classList.add("bi", "bi-shield-shaded");
-    } else if (ship.role === "Attacker") {
-      roleIcon.classList.add("bi", "bi-lightning-charge-fill");
-    } else if (ship.role === "Debuffer") {
-      roleIcon.classList.add("bi", "bi-bug-fill");
+  galleryContainer.appendChild(card);
+});
+
+const cardFilter = document.getElementById("cardFilter");
+cardFilter.addEventListener("change", filterCards);
+
+function filterCards() {
+  const selectedValue = cardFilter.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    const cardName = card.getAttribute("data-name").toLowerCase();
+    const cardBasicAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).basic;
+    const cardChargedAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).charged;
+    const cardPassiveAbility = hangar.find((ship) => ship.name.toLowerCase() === cardName).passive;
+    const cardRefitAbility = hangar.find((ship) => ship.name.toLowerCase() === cardName).refit;
+
+    if (
+      (Array.isArray(cardBasicAbilities) && cardBasicAbilities.includes(selectedValue)) ||
+      (Array.isArray(cardChargedAbilities) && cardChargedAbilities.includes(selectedValue)) ||
+      (Array.isArray(cardPassiveAbility) && cardPassiveAbility.includes(selectedValue)) ||
+      (Array.isArray(cardRefitAbility) && cardRefitAbility.includes(selectedValue)) ||
+      (typeof cardBasicAbilities === "string" && cardBasicAbilities === selectedValue) ||
+      (typeof cardChargedAbilities === "string" && cardChargedAbilities === selectedValue) ||
+      (typeof cardPassiveAbility === "string" && cardPassiveAbility === selectedValue) ||
+      (typeof cardRefitAbility === "string" && cardRefitAbility === selectedValue)
+    ) {
+      card.style.display = "block"; // Afficher la carte
     } else {
-      roleIcon.classList.add("bi", "bi-question-circle-fill");
+      card.style.display = "none"; // Masquer la carte
     }
-  
-    card.appendChild(affinityIcon);
-    card.appendChild(roleIcon);
-  
-    const image = document.createElement("img");
-    image.src = ship.image;
-    image.alt = ship.name;
-    
-    card.appendChild(image);
-    
-    galleryContainer.appendChild(card);
   });
-  
+}
+
+
 
 

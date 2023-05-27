@@ -291,14 +291,14 @@ i {
   overflow: hidden;
   border-radius: 0;
   border-bottom-right-radius: 10px;
-  max-width: 175px;
+  max-width: 150px;
 
 }
 
 .card img {
   display: flex;
   justify-items: center;
-  max-width: 175px;
+  max-width: 150px;
   width:  100%;
   height: auto;
   display: block;
@@ -384,4 +384,8 @@ i {
 
 /*checkbox*/
 
-
+#cardFilter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

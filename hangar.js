@@ -1559,9 +1559,67 @@ var hangar = [
     critD: 30,
     speed: 81  
   },
-  
+    {
+    name: "Zeolite",
+    image: "images/chars/zeolite.png",
+    affinity: "Electric",
+    rarity: "Legendary",
+    faction: "MPL",
+    role: "Debuffer",
+    basic: "attack down 3",
+    charged: "emp charged 2",
+    passive: "",
+    refit: "",
+    hp: 16950,
+    attack: 4591,
+    defense: 2166,
+    hacking: 144,
+    security: 33,
+    critR: 6,
+    critD: 30,
+    speed: 71  
+  },
+   {
+    name: "Zosimos",
+    image: "images/chars/zosimos.png",
+    affinity: "Antimatter",
+    rarity: "Legendary",
+    faction: "Everliving",
+    role: "Debuffer",
+    basic: ["inc. repair down 2", "inc. damage up 2"],
+    charged: "block repair",
+    passive: ["repair", "hacking up 2"],
+    refit: "fill charge",
+    hp: 18200,
+    attack: 4201,
+    defense: 2785,
+    hacking: 147,
+    security: 12,
+    critR: 6,
+    critD: 22,
+    speed: 88 
+  },
 ]
 
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetCards);
+
+function resetCards() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.style.display = "block";
+  });
+}
+
+hangar.sort((a, b) => {
+  const rarityOrder = {
+    legendary: 0,
+    epic: 1,
+    rare: 2
+  };
+  
+  return rarityOrder[a.rarity.toLowerCase()] - rarityOrder[b.rarity.toLowerCase()];
+});
 const galleryContainer = document.querySelector(".gallery");
   
 hangar.forEach((ship) => {

@@ -1565,7 +1565,8 @@ var hangar = [
 const galleryContainer = document.querySelector(".gallery");
   
 hangar.forEach((ship) => {
-  
+  const galleryContainer = document.querySelector(".gallery");
+  galleryContainer.classList.add("gallery-container");
   const card = document.createElement("div");
   card.classList.add("card");
 
@@ -1621,7 +1622,7 @@ hangar.forEach((ship) => {
 
 const cardFilter = document.getElementById("cardFilter");
 cardFilter.addEventListener("change", filterCards);
-
+ 
 function filterCards() {
   const selectedValue = cardFilter.value.toLowerCase();
   const cards = document.querySelectorAll(".card");

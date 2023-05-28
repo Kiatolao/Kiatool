@@ -1566,7 +1566,7 @@ var hangar = [
     rarity: "Legendary",
     faction: "MPL",
     role: "Debuffer",
-    basic: "attack down 3",
+    basic: "defense down 3",
     charged: "emp charged 2",
     passive: "",
     refit: "",

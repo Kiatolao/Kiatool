@@ -10,6 +10,16 @@ body {
 
 }
 
+canvas {
+		  opacity: 0.5;
+		  position: fixed;
+		  top:0;
+		  left:0;
+      width: 100%;
+      z-index: -1;
+
+		}
+
 .logokt {
   width: 30px;
   margin-right: 10px;
@@ -399,11 +409,11 @@ i {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  text-align: center;
+
 }
 
 #cardFilter option {
-  color: #ffffff; /* Text color */
+  color: #323131; /* Text color */
 }
 
 #cardFilter option:checked {

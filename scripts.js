@@ -292,3 +292,4 @@ reset.addEventListener("click", () => {
   selectedSlice.selectedIndex = 0;
   selectedStage.selectedIndex = 0;
 });
+

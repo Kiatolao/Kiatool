@@ -384,8 +384,29 @@ i {
 
 /*checkbox*/
 
-#cardFilter, #resetButton {
+#resetButton {
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+/* Dropdown menu styles */
+#cardFilter {
+  color: #1a1a1a;
+  height: 30px;
+  font-family: 'inter';
+  border: 0;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  text-align: center;
+}
+
+#cardFilter option {
+  color: #ffffff; /* Text color */
+}
+
+#cardFilter option:checked {
+  background-color: #007bff; 
+  color: #ffffff;
 }

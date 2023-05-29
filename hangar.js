@@ -1708,7 +1708,3 @@ function filterCards() {
     }
   });
 }
-
-
-
-

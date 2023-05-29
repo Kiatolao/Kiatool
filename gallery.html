@@ -17,23 +17,10 @@
 
   </head>
 <body>
- 
 <!--Background element-->
 <canvas id="canvas"></canvas>
 
 <!-- Navbar -->
-<script>
-  function checkPassword() {
-      var password = document.getElementById('password').value;
-      
-      // Replace 'password123' with your desired password
-      if (password === 'guesscon17') {
-          document.getElementById('content').style.display = 'block';
-      } else {
-          alert('Incorrect password');
-      }
-  }
-</script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container">
     <img class="logokt" src="images/micro2.png" alt="">
@@ -54,17 +41,6 @@
   </div>
 </nav>
 
-<div id="login">
-  <h1>Enter Password</h1>
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="checkPassword()">Submit</button>
-</div>
-
-<div id="content" style="display: none;">
-  <!-- Content of the protected page goes here -->
-  
-  <!--Main div--> 
-   
   <a href="https://starborne.com/frontiers">
     <img src="images/FrontiersLogo.png" class="image-fluid sbf mx-auto d-block" alt="Frontiers Logo">
   </a>
@@ -173,7 +149,6 @@
         </div>
       </div>
     </div>
-</div>
 </body>
  
 

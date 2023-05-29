@@ -1676,23 +1676,8 @@ hangar.forEach((ship) => {
   image.alt = ship.name;
   
   card.appendChild(image);
-  card.addEventListener("click", () => {
-  const modal = document.getElementById("cardModal");
-  modal.classList.add("show"); // Add "show" class to trigger modal display
-
-  // Create a clone of the clicked card and append it to the modal
-  const modalContent = modal.querySelector(".modal-content");
-  const clonedCard = card.cloneNode(true);
-  clonedCard.classList.add("cloned-card");
-  modalContent.innerHTML = '';
-  modalContent.appendChild(clonedCard);
-
-  // Initialize the modal functionality
-  const bootstrapModal = new bootstrap.Modal(modal);
-  bootstrapModal.show();
-});
-
-galleryContainer.appendChild(card);
+  
+  galleryContainer.appendChild(card);
 });
 
 

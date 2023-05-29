@@ -420,3 +420,22 @@ i {
   background-color: #007bff; 
   color: #ffffff;
 }
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 20%;
+  right: 20%;
+  top: 20%;
+  width: 60%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+
+}
+.modal-content {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+}
+

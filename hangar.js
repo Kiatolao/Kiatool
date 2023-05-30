@@ -1570,7 +1570,7 @@ passiveM: "When ally within active pattern has their shield destroyed : apply DE
     rarity: "Legendary",
     faction: "MPL",
     role: "Debuffer",
-    basic: "defense down 3",
+    basic: ["defense down 3", "remove buff"],
     charged: "emp charged 2",
     passive: "",
     refit: "",
@@ -1789,7 +1789,3 @@ passiveContainer.id = 'passiveContainer'; // Add ID to the div
     });
   });
 });
-
-
-
-

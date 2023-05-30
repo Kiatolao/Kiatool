@@ -1737,18 +1737,19 @@ cards.forEach((card) => {
 
     // Update card information
     cardInfoContainer.innerHTML = `
-      <p>
-        <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
-        <strong>HP</strong>: ${cardData.hp}<br>
-        <strong>Attack</strong>: ${cardData.attack}<br>
-        <strong>Defense</strong>: ${cardData.defense}<br>
-        <strong>Hacking</strong>: ${cardData.hacking}<br>
-        <strong>Security</strong>: ${cardData.security}<br>
-        <strong>Crit Rate</strong>: ${cardData.critR}%<br>
-        <strong>Crit Damage</strong>: ${cardData.critD}%<br>
-        <strong>Speed</strong>: ${cardData.speed}
-      </p>
-    `;
+  <p style="text-align: left;">
+    <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
+    <strong style="float: left; width: 90px;">HP</strong><span style="float: right;">${cardData.hp}</span><br>
+    <strong style="float: left; width: 90px;">Attack</strong><span style="float: right;">${cardData.attack}</span><br>
+    <strong style="float: left; width: 90px;">Defense</strong><span style="float: right;">${cardData.defense}</span><br>
+    <strong style="float: left; width: 90px;">Hacking</strong><span style="float: right;">${cardData.hacking}</span><br>
+    <strong style="float: left; width: 90px;">Security</strong><span style="float: right;">${cardData.security}</span><br>
+    <strong style="float: left; width: 90px;">Crit Rate</strong><span style="float: right;">${cardData.critR}%</span><br>
+    <strong style="float: left; width: 90px;">Crit Dam.</strong><span style="float: right;">${cardData.critD}%</span><br>
+    <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span>
+  </p>
+`;
+
 
     // Update skills information
     skillsContainer.innerHTML = `

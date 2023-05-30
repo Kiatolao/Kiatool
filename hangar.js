@@ -1718,13 +1718,30 @@ const modal = document.getElementById("modal");
 const clonedCardContainer = document.getElementById("clonedCard");
 const closeButton = document.querySelector(".close");
 
+
 cards.forEach((card) => {
   card.addEventListener("click", (event) => {
     const clickedCard = event.currentTarget;
     const clonedCard = clickedCard.cloneNode(true);
+    const cardData = hangar.find((ship) => ship.name.toLowerCase() === clickedCard.getAttribute("data-name").toLowerCase());
 
+    const clonedCardContainer = document.getElementById("clonedCard");
     clonedCardContainer.innerHTML = ""; // Clear any existing cloned card
     clonedCardContainer.appendChild(clonedCard);
+
+    // Add card information paragraph
+    const cardInfo = document.createElement("p");
+    cardInfo.innerHTML = `
+      HP:<br> ${cardData.hp}<br>
+      Attack: ${cardData.attack}<br>
+      Defense: ${cardData.defense}<br>
+      Hacking: ${cardData.hacking}<br>
+      Security: ${cardData.security}<br>
+      Crit Rate: ${cardData.critR}%<br>
+      Crit Damage: ${cardData.critD}%<br>
+      Speed: ${cardData.speed}
+    `;
+    clonedCardContainer.appendChild(cardInfo);
 
     modal.style.display = "block"; // Display the modal
 
@@ -1734,3 +1751,4 @@ cards.forEach((card) => {
     });
   });
 });
+

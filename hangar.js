@@ -1710,9 +1710,9 @@ function filterCards() {
       (typeof cardPassiveAbility === "string" && cardPassiveAbility === selectedValue) ||
       (typeof cardRefitAbility === "string" && cardRefitAbility === selectedValue)
     ) {
-      card.style.display = "block"; // Afficher la carte
+      card.style.display = "block"; // 
     } else {
-      card.style.display = "none"; // Masquer la carte
+      card.style.display = "none"; 
     }
   });
 }
@@ -1732,10 +1732,12 @@ cards.forEach((card) => {
     const clonedCardContainer = document.getElementById("clonedCard");
     const cardInfoContainer = document.getElementById("cardInfo");
     const skillsContainer = document.getElementById("skillsContainer");
-    clonedCardContainer.innerHTML = ""; // Clear any existing cloned card
+    clonedCardContainer.innerHTML = "";
+    
     clonedCardContainer.appendChild(clonedCard);
 
-    // Update card information
+    clonedCard.style.boxShadow = "7px 7px 5px 0 rgba(0, 0, 0, 0.3)";
+ 
     cardInfoContainer.innerHTML = `
       <p style="text-align: left;">
         <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
@@ -1750,18 +1752,18 @@ cards.forEach((card) => {
       </p>
     `;
 
-    // Update skills information
     const basicActiveContainer = document.createElement('div');
-basicActiveContainer.id = 'basicActiveContainer'; // Add ID to the div
+basicActiveContainer.id = 'basicActiveContainer'; 
 
 const chargedActiveContainer = document.createElement('div');
-chargedActiveContainer.id = 'chargedActiveContainer'; // Add ID to the div
+chargedActiveContainer.id = 'chargedActiveContainer';
 
 const passiveContainer = document.createElement('div');
-passiveContainer.id = 'passiveContainer'; // Add ID to the div
+passiveContainer.id = 'passiveContainer'; 
 
 
     basicActiveContainer.innerHTML = `
+      <hr style="border-color:white;">
       <p><strong><span style="color: orange;">BASIC ACTIVE</span></strong></p>
       <p>${cardData.basicA}</p>
     `;
@@ -1776,14 +1778,14 @@ passiveContainer.id = 'passiveContainer'; // Add ID to the div
       <p>${cardData.passiveM}</p>
     `;
 
-    skillsContainer.innerHTML = ""; // Clear any existing skills content
+    skillsContainer.innerHTML = ""; 
+    
     skillsContainer.appendChild(basicActiveContainer);
     skillsContainer.appendChild(chargedActiveContainer);
     skillsContainer.appendChild(passiveContainer);
 
-    modal.style.display = "block"; // Display the modal
-
-    // Close modal when the close button is clicked
+    modal.style.display = "block"; 
+    
     closeButton.addEventListener("click", () => {
       modal.style.display = "none";
     });

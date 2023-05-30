@@ -1737,29 +1737,49 @@ cards.forEach((card) => {
 
     // Update card information
     cardInfoContainer.innerHTML = `
-  <p style="text-align: left;">
-    <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
-    <strong style="float: left; width: 90px;">HP</strong><span style="float: right;">${cardData.hp}</span><br>
-    <strong style="float: left; width: 90px;">Attack</strong><span style="float: right;">${cardData.attack}</span><br>
-    <strong style="float: left; width: 90px;">Defense</strong><span style="float: right;">${cardData.defense}</span><br>
-    <strong style="float: left; width: 90px;">Hacking</strong><span style="float: right;">${cardData.hacking}</span><br>
-    <strong style="float: left; width: 90px;">Security</strong><span style="float: right;">${cardData.security}</span><br>
-    <strong style="float: left; width: 90px;">Crit Rate</strong><span style="float: right;">${cardData.critR}%</span><br>
-    <strong style="float: left; width: 90px;">Crit Dam.</strong><span style="float: right;">${cardData.critD}%</span><br>
-    <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span>
-  </p>
-`;
-
+      <p style="text-align: left;">
+        <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
+        <strong style="float: left; width: 90px;">HP</strong><span style="float: right;">${cardData.hp}</span><br>
+        <strong style="float: left; width: 90px;">Attack</strong><span style="float: right;">${cardData.attack}</span><br>
+        <strong style="float: left; width: 90px;">Defense</strong><span style="float: right;">${cardData.defense}</span><br>
+        <strong style="float: left; width: 90px;">Hacking</strong><span style="float: right;">${cardData.hacking}</span><br>
+        <strong style="float: left; width: 90px;">Security</strong><span style="float: right;">${cardData.security}</span><br>
+        <strong style="float: left; width: 90px;">Crit Rate</strong><span style="float: right;">${cardData.critR}%</span><br>
+        <strong style="float: left; width: 90px;">Crit Dam.</strong><span style="float: right;">${cardData.critD}%</span><br>
+        <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span>
+      </p>
+    `;
 
     // Update skills information
-    skillsContainer.innerHTML = `
+    const basicActiveContainer = document.createElement('div');
+basicActiveContainer.id = 'basicActiveContainer'; // Add ID to the div
+
+const chargedActiveContainer = document.createElement('div');
+chargedActiveContainer.id = 'chargedActiveContainer'; // Add ID to the div
+
+const passiveContainer = document.createElement('div');
+passiveContainer.id = 'passiveContainer'; // Add ID to the div
+
+
+    basicActiveContainer.innerHTML = `
       <p><strong><span style="color: orange;">BASIC ACTIVE</span></strong></p>
       <p>${cardData.basicA}</p>
-      <p><strong><span style="color: orange;">CHARGED ACTIVE</span></strong><span style="color: #FFD700;"> Cooldown</span> :</em> ${cardData.cooldown}</p>
+    `;
+
+    chargedActiveContainer.innerHTML = `
+      <p><strong><span style="color: orange;">CHARGED ACTIVE</span></strong><span style="color: #FFD700;"> Cooldown</span>: ${cardData.cooldown}</p>
       <p>${cardData.chargedA}</p>
+    `;
+
+    passiveContainer.innerHTML = `
       <p><strong><span style="color: orange;">PASSIVE</span></strong></p>
       <p>${cardData.passiveM}</p>
     `;
+
+    skillsContainer.innerHTML = ""; // Clear any existing skills content
+    skillsContainer.appendChild(basicActiveContainer);
+    skillsContainer.appendChild(chargedActiveContainer);
+    skillsContainer.appendChild(passiveContainer);
 
     modal.style.display = "block"; // Display the modal
 
@@ -1769,6 +1789,7 @@ cards.forEach((card) => {
     });
   });
 });
+
 
 
 

@@ -10,6 +10,10 @@ var hangar = [
         charged: ["shield", "remove debuff"],
         passive: "defense up 2",
         refit: "remove debuff",
+        basicA: "Apply shield, apply HACKING UP III and ATLAS COORDINATION III.",
+chargedA: "Apply shield and remove 2 debuffs.",
+cooldown: "4",
+passiveM: "When ally within active pattern has their shield destroyed : apply DEFENSE UP II and remove all debuffs.",
         hp: 21805,
         attack: 2474,
         defense: 2881,
@@ -1726,22 +1730,36 @@ cards.forEach((card) => {
     const cardData = hangar.find((ship) => ship.name.toLowerCase() === clickedCard.getAttribute("data-name").toLowerCase());
 
     const clonedCardContainer = document.getElementById("clonedCard");
+    const cardInfoContainer = document.getElementById("cardInfo");
+    const skillsContainer = document.getElementById("skillsContainer");
     clonedCardContainer.innerHTML = ""; // Clear any existing cloned card
     clonedCardContainer.appendChild(clonedCard);
 
-    // Add card information paragraph
-    const cardInfo = document.createElement("p");
-    cardInfo.innerHTML = `
-      HP: ${cardData.hp}<br>
-      Attack: ${cardData.attack}<br>
-      Defense: ${cardData.defense}<br>
-      Hacking: ${cardData.hacking}<br>
-      Security: ${cardData.security}<br>
-      Crit Rate: ${cardData.critR}%<br>
-      Crit Damage: ${cardData.critD}%<br>
-      Speed: ${cardData.speed}
+    // Update card information
+    cardInfoContainer.innerHTML = `
+      <p>
+        <strong>Attributes</strong><br>
+        <strong>HP</strong>: ${cardData.hp}<br>
+        Attack: ${cardData.attack}<br>
+        Defense: ${cardData.defense}<br>
+        Hacking: ${cardData.hacking}<br>
+        Security: ${cardData.security}<br>
+        Crit Rate: ${cardData.critR}%<br>
+        Crit Damage: ${cardData.critD}%<br>
+        Speed: ${cardData.speed}
+      </p>
     `;
-    clonedCardContainer.appendChild(cardInfo);
+
+    // Update skills information
+    skillsContainer.innerHTML = `
+      <p><strong>Basic Active:</strong></p>
+      <p>${cardData.basicA}</p>
+      <p><strong>Charged Active:</strong></p>
+      <p>${cardData.chargedA}</p>
+      <p><em>Cooldown:</em> ${cardData.cooldown}</p>
+      <p><strong>Passive:</strong></p>
+      <p>${cardData.passiveM}</p>
+    `;
 
     modal.style.display = "block"; // Display the modal
 
@@ -1751,4 +1769,6 @@ cards.forEach((card) => {
     });
   });
 });
+
+
 

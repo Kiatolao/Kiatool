@@ -1732,7 +1732,7 @@ cards.forEach((card) => {
     // Add card information paragraph
     const cardInfo = document.createElement("p");
     cardInfo.innerHTML = `
-      HP:<br> ${cardData.hp}<br>
+      HP: ${cardData.hp}<br>
       Attack: ${cardData.attack}<br>
       Defense: ${cardData.defense}<br>
       Hacking: ${cardData.hacking}<br>

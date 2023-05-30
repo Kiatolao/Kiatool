@@ -449,12 +449,15 @@ i {
   hsl(240deg 1% 17%) 67%,
   hsl(240deg 0% 15%) 78%,
   hsl(240deg 0% 13%) 89%,
-  hsl(0deg 0% 11%) 100%
+  hsl(0deg 0% 11%) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 );
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 100%;
   max-width: 600px;
 }
 .close {
@@ -474,4 +477,34 @@ i {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+#clonedCard {
+  
+}
+
+#cardInfo {
+  margin-left: 20px; /* Adjust as needed */
+}
+
+#skillsContainer {
+  margin-top: 20px;
+}
+
+#skillsContainer p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#skillsContainer strong {
+  font-weight: bold;
+}
+
+#skillsContainer em {
+  font-style: italic;
 }

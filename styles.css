@@ -27,7 +27,6 @@ canvas {
   transform: scaleX(-1);
 }
 
-
 .icon {
   transform: scaleX(-1);
 }
@@ -51,9 +50,6 @@ canvas {
   font-family: 'Russo One';
   font-size: 18px;
 }
-
-
-
 
 .navbar {
   width: 100%;
@@ -249,7 +245,7 @@ i {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: rgba(255, 255, 255, 1); /* Couleur de l'icône avec transparence */
+  color: rgba(255, 255, 255, 1);
   font-size: 20px;
 
 }
@@ -371,11 +367,10 @@ i {
 }
 
 #clonedCard {
- box-shadow: 50px;
 }
 
 #cardInfo {
-  margin-left: 20px; /* Adjust as needed */
+  margin-left: 20px;
 }
 
 #skillsContainer {

@@ -1712,3 +1712,25 @@ function filterCards() {
     }
   });
 }
+
+const cards = document.querySelectorAll(".card");
+const modal = document.getElementById("modal");
+const clonedCardContainer = document.getElementById("clonedCard");
+const closeButton = document.querySelector(".close");
+
+cards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    const clickedCard = event.currentTarget;
+    const clonedCard = clickedCard.cloneNode(true);
+
+    clonedCardContainer.innerHTML = ""; // Clear any existing cloned card
+    clonedCardContainer.appendChild(clonedCard);
+
+    modal.style.display = "block"; // Display the modal
+
+    // Close modal when the close button is clicked
+    closeButton.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  });
+});

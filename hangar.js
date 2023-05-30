@@ -1738,26 +1738,25 @@ cards.forEach((card) => {
     // Update card information
     cardInfoContainer.innerHTML = `
       <p>
-        <strong>Attributes</strong><br>
+        <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
         <strong>HP</strong>: ${cardData.hp}<br>
-        Attack: ${cardData.attack}<br>
-        Defense: ${cardData.defense}<br>
-        Hacking: ${cardData.hacking}<br>
-        Security: ${cardData.security}<br>
-        Crit Rate: ${cardData.critR}%<br>
-        Crit Damage: ${cardData.critD}%<br>
-        Speed: ${cardData.speed}
+        <strong>Attack</strong>: ${cardData.attack}<br>
+        <strong>Defense</strong>: ${cardData.defense}<br>
+        <strong>Hacking</strong>: ${cardData.hacking}<br>
+        <strong>Security</strong>: ${cardData.security}<br>
+        <strong>Crit Rate</strong>: ${cardData.critR}%<br>
+        <strong>Crit Damage</strong>: ${cardData.critD}%<br>
+        <strong>Speed</strong>: ${cardData.speed}
       </p>
     `;
 
     // Update skills information
     skillsContainer.innerHTML = `
-      <p><strong>Basic Active:</strong></p>
+      <p><strong><span style="color: orange;">BASIC ACTIVE</span></strong></p>
       <p>${cardData.basicA}</p>
-      <p><strong>Charged Active:</strong></p>
+      <p><strong><span style="color: orange;">CHARGED ACTIVE</span></strong><span style="color: #FFD700;"> Cooldown</span> :</em> ${cardData.cooldown}</p>
       <p>${cardData.chargedA}</p>
-      <p><em>Cooldown:</em> ${cardData.cooldown}</p>
-      <p><strong>Passive:</strong></p>
+      <p><strong><span style="color: orange;">PASSIVE</span></strong></p>
       <p>${cardData.passiveM}</p>
     `;
 

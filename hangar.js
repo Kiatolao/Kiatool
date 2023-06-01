@@ -275,7 +275,7 @@ passiveM: "When self removes a debuff: Apply repair. Ally or self damaged (excep
     passive: "",
     refit: "security down 3",
     basicA: "Deal damage and apply ATTACK DOWN III.",
-chargedA: "Deal damage and apply OUT, DAMAGE DOWN II.",
+chargedA: "Deal damage and apply OUT. DAMAGE DOWN II.",
 cooldown: "4",
 passiveM: "When an enemy uses their charged active: Deal damage and apply SECURITY DOWN II.",
     hp: 19033,

@@ -367,9 +367,6 @@ i {
   align-items: flex-start;
 }
 
-#clonedCard {
-}
-
 #cardInfo {
   margin-left: 20px;
 }
@@ -396,4 +393,11 @@ i {
 }
 #chargedActiveContainer {
   margin-bottom: 10px;
+}
+
+.pattern-image {
+  position: absolute;
+  top: 5%;
+  right:0%;
+  opacity: 80%;
 }

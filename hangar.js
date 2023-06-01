@@ -2,7 +2,7 @@ var hangar = [
     {
         name: "Aegis",
         image: "images/chars/aegis.png",
-        target: "images/pattern/pattern-aegis.png",
+        patternImage: "images/pattern/pattern-aegis.png",
         affinity: "Antimatter",
         rarity: "Legendary",
         faction: "Atlas Syndicate",
@@ -27,6 +27,7 @@ passiveM: "When ally within active pattern has their shield destroyed : apply DE
     {
         name: "Anemone",
         image: "images/chars/anemone.png",
+        patternImage: "images/pattern/pattern-anemone.png",
         affinity: "Thermal",
         rarity: "Legendary",
         faction: "Gelecek",
@@ -99,6 +100,7 @@ passiveM: "When an enemy cleanses a debuff: Apply OUT, DAMAGE DOWN I and apply G
     {
         name: "Asphyxiator",
         image: "images/chars/asphyxiator.png",
+        patternImage: "images/pattern/pattern-asphyxiator.png",
         affinity: "Thermal",
         rarity: "Legendary",
         faction: "Marauders",
@@ -195,6 +197,7 @@ passiveM: "Every turn: Repair self",
     {
         name: "Crocus",
         image: "images/chars/crocus.png",
+        patternImage: "images/pattern/pattern-crocus.png",
         affinity: "Thermal",
         rarity: "Legendary",
         faction: "Gelecek",
@@ -243,6 +246,7 @@ passiveM: "Start of combat: Gain shield and gain ATLAS COORDINATION II.",
     {
       name: "Cultivator",
       image: "images/chars/cultivator.png",
+      patternImage: "images/pattern/pattern-cultivator.png",
       affinity: "Chemical",
       rarity: "Legendary",
       faction: "Binderburg",
@@ -267,6 +271,7 @@ passiveM: "When self removes a debuff: Apply repair. Ally or self damaged (excep
   {
     name: "Curator",
     image: "images/chars/curator.png",
+    patternImage: "images/pattern/pattern-curator.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Binderburg",
@@ -1948,10 +1953,22 @@ hangar.sort((a, b) => {
 const galleryContainer = document.querySelector(".gallery");
   
 hangar.forEach((ship) => {
+  
   const galleryContainer = document.querySelector(".gallery");
   galleryContainer.classList.add("gallery-container");
   const card = document.createElement("div");
   card.classList.add("card");
+  const patternImage = document.createElement("img");
+  patternImage.src = ship.patternImage;
+  patternImage.alt = "Pattern";
+  patternImage.classList.add("pattern-image");
+  
+  const desiredWidth = 100; // Adjust this value as needed
+  const desiredHeight = 100; // Adjust this value as needed
+  patternImage.style.width = `${37}px`;
+  patternImage.style.height = `${37}px`;
+  
+  card.appendChild(patternImage);
 
   if (ship.rarity.toLowerCase() === "legendary") {
     card.classList.add("legendary-card");
@@ -1990,6 +2007,7 @@ hangar.forEach((ship) => {
   } else {
     roleIcon.classList.add("bi", "bi-question-circle-fill");
   }
+  
 
   card.appendChild(affinityIcon);
   card.appendChild(roleIcon);
@@ -1997,8 +2015,9 @@ hangar.forEach((ship) => {
   const image = document.createElement("img");
   image.src = ship.image;
   image.alt = ship.name;
-  
+
   card.appendChild(image);
+
   
   galleryContainer.appendChild(card);
 });

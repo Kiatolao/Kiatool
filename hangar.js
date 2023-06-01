@@ -22,7 +22,8 @@ passiveM: "When ally within active pattern has their shield destroyed : apply DE
         security: 69,
         critR: 0,
         critD: 4,
-        speed: 106
+        speed: 106,
+        target: "All",
     },
     {
         name: "Anemone",
@@ -1965,8 +1966,8 @@ hangar.forEach((ship) => {
   
   const desiredWidth = 100; // Adjust this value as needed
   const desiredHeight = 100; // Adjust this value as needed
-  patternImage.style.width = `${37}px`;
-  patternImage.style.height = `${37}px`;
+  patternImage.style.width = `${30}px`;
+  patternImage.style.height = `${30}px`;
   
   card.appendChild(patternImage);
 
@@ -2086,7 +2087,8 @@ cards.forEach((card) => {
         <strong style="float: left; width: 90px;">Security</strong><span style="float: right;">${cardData.security}</span><br>
         <strong style="float: left; width: 90px;">Crit Rate</strong><span style="float: right;">${cardData.critR}%</span><br>
         <strong style="float: left; width: 90px;">Crit Dam.</strong><span style="float: right;">${cardData.critD}%</span><br>
-        <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span>
+        <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span><br>
+        <strong style="float: left; width: 90px;">Target</strong><span style="float: right;">${cardData.target}</span>
       </p>
     `;
 

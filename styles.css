@@ -318,7 +318,7 @@ i {
 .modal-content {
   opacity: 97%;
   font-family: 'Inter';
-  font-size: 14px;
+  font-size: 13px;
   color: white ;
   background-image: linear-gradient(
   75deg,
@@ -398,6 +398,6 @@ i {
 .pattern-image {
   position: absolute;
   top: 5%;
-  right:0%;
+  right:3%;
   opacity: 80%;
 }

@@ -1620,7 +1620,7 @@ passiveM: "When damaged (except DoTs): deal damage and gain LEGION DISCIPLINE II
     passive: "out. damage up 3",
     refit: "attack up 3",
     basicA: "Remove 2 debuffs and deal damage [Based on number of buffs].",
-chargedA: "Deal damage (based on number of buffs). If self has no debuffs: Give extra action (1).",
+chargedA: "Deal damage [based on number of buffs]. If self has no debuffs: Give extra action.",
 cooldown: "3",
 passiveM: "Start of the round, if self has no debuffs: Gain OUT. DAMAGE UP III. When self removes a debuff: Gain ATTACK UP III.",
     hp: 18876,

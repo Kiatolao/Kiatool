@@ -2,7 +2,7 @@ var hangar = [
     {
         name: "Aegis",
         image: "images/chars/aegis.png",
-        target: "images/pattern/pat-aegis.png",
+        target: "images/pattern/pattern-aegis.png",
         affinity: "Antimatter",
         rarity: "Legendary",
         faction: "Atlas Syndicate",

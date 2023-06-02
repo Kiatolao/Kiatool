@@ -12,9 +12,10 @@ var hangar = [
         passive: "defense up 2",
         refit: "remove debuff",
         basicA: "Apply shield, apply HACKING UP III and ATLAS COORDINATION III.",
-chargedA: "Apply shield and remove 2 debuffs.",
-cooldown: "4",
-passiveM: "When ally within active pattern has their shield destroyed : apply DEFENSE UP II and remove all debuffs.",
+        chargedA: "Apply shield and remove 2 debuffs.",
+        cooldown: "4",
+        passiveM: "When ally within active pattern has their shield destroyed : apply DEFENSE UP II and remove all debuffs.",
+        target: "Self",       
         hp: 21805,
         attack: 2474,
         defense: 2881,
@@ -23,7 +24,7 @@ passiveM: "When ally within active pattern has their shield destroyed : apply DE
         critR: 0,
         critD: 4,
         speed: 106,
-        target: "All",
+
     },
     {
         name: "Anemone",

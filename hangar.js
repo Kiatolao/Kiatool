@@ -65,9 +65,9 @@ passiveM: "This ship takes 20% less damage from debuffed enemies. When an enemy 
         passive: ["tianchao precision 2", "stealth"],
         refit: "",
         basicA: "Deal damage (ignore taunt and provoke).",
-chargedA: "Deal damage (ignore taunt and provoke) and apply SPEED DOWN II.",
-cooldown: "3",
-passiveM: "When damaging a debuffer/supporter: Gain STEALTH and gain TIANCHAO PRECISION II.",
+        chargedA: "Deal damage (ignore taunt and provoke) and apply SPEED DOWN II.",
+        cooldown: "3",
+        passiveM: "When damaging a debuffer/supporter: Gain STEALTH and gain TIANCHAO PRECISION II.",
         hp: 10747,
         attack: 5012,
         defense: 2281,
@@ -76,7 +76,7 @@ passiveM: "When damaging a debuffer/supporter: Gain STEALTH and gain TIANCHAO PR
         critR: 11,
         critD: 38,
         speed: 89,
-        target: "z"  
+        target: "Skip"  
     },
     {
         name: "Arum",
@@ -102,7 +102,7 @@ passiveM: "When an enemy cleanses a debuff: Apply OUT, DAMAGE DOWN I and apply G
         critR: 0,
         critD: 10,
         speed: 80,
-        target: "z"  
+        target: "Skip"  
     },
     {
         name: "Asphyxiator",
@@ -128,11 +128,12 @@ passiveM: "Start of round, if there are any enemies with >2 debuffs on them: Gai
         critR: 22,
         critD: 10,
         speed: 93,
-        target:"Front"  
+        target:"Skip"  
     },
     {
         name: "Berserker",
         image: "images/chars/berserker.png",
+        patternImage: "images/pattern/pattern-berserker.png",
         affinity: "Electric",
         rarity: "Rare",
         faction: "Marauders",
@@ -152,11 +153,13 @@ passiveM: "When hitting >2 enemies: Gain MARAUDER RAGE II.",
         security: 0,
         critR: 25,
         critD: 42,
-        speed: 87  
+        speed: 87,
+        target: "Front"  
     },
     {
         name: "Butcher",
         image: "images/chars/butcher.png",
+        patternImage: "images/pattern/pattern-butcher.png",
         affinity: "Thermal",
         rarity: "Epic",
         faction: "Marauders",
@@ -176,11 +179,13 @@ passiveM: "Every turn: gain OVERLOAD. On kill: lose OVERLOAD. On debuff applicat
         security: 0,
         critR: 23,
         critD: 42,
-        speed: 90  
+        speed: 90,
+        target: "Skip"  
     },
     {
         name: "Cinya",
         image: "images/chars/cinya.png",
+        patternImage: "images/pattern/pattern-cinya.png",
         affinity: "Antimatter",
         rarity: "Rare",
         faction: "Terran Combine",
@@ -200,7 +205,8 @@ passiveM: "Every turn: Repair self",
         security: 65,
         critR: 0,
         critD: 20,
-        speed: 60  
+        speed: 60,
+        target: "Front"  
     },
     {
         name: "Crocus",
@@ -225,11 +231,13 @@ passiveM: "When allies apply corrosion to an enemy: Repair self and apply CORROS
         security: 16,
         critR: 4,
         critD: 18,
-        speed: 89  
+        speed: 89,
+        target: "Front"  
     },
     {
         name: "Crucialis",
         image: "images/chars/crucialis.png",
+        patternImage: "images/pattern/pattern-crucialis.png",
         affinity: "Electric",
         rarity: "Rare",
         faction: "GelecAtlas Syndicate",
@@ -249,7 +257,8 @@ passiveM: "Start of combat: Gain shield and gain ATLAS COORDINATION II.",
         security: 17,
         critR: 17,
         critD: 46,
-        speed: 85  
+        speed: 85,
+        target: "Skip"  
     },
     {
       name: "Cultivator",
@@ -274,7 +283,8 @@ passiveM: "When self removes a debuff: Apply repair. Ally or self damaged (excep
       security: 73,
       critR: 4,
       critD: 20,
-      speed: 95  
+      speed: 95,
+      target: "Self"  
   },
   {
     name: "Curator",
@@ -299,11 +309,13 @@ passiveM: "When an enemy uses their charged active: Deal damage and apply SECURI
     security: 24,
     critR: 2,
     critD: 30,
-    speed: 77  
+    speed: 77,
+    target:"Front"  
   },  
   {
     name: "Defiant",
     image: "images/chars/defiant.png",
+    patternImage: "images/pattern/pattern-defiant.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Frontier Legion",
@@ -323,11 +335,13 @@ passiveM: "When this ship applies stasis: Gain shield. When adjacent to supporte
     security: 54,
     critR: 7,
     critD: 12,
-    speed: 71  
+    speed: 71,
+    target: "Skip"
   },
   {
     name: "Demolisher",
     image: "images/chars/demolisher.png",
+    patternImage: "images/pattern/pattern-demolisher.png",
     affinity: "Antimatter",
     rarity: "Legendary",
     faction: "Marauders",
@@ -347,11 +361,13 @@ passiveM: "When a bomb explodes on an enemy: Lose charge on that enemy and deal 
     security: 1,
     critR: 28,
     critD: 34,
-    speed: 95  
+    speed: 95,
+    target: "Front"  
   },
   {
     name: "Faust",
     image: "images/chars/faust.png",
+    patternImage: "images/pattern/pattern-faust.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Everliving",
@@ -371,11 +387,13 @@ passiveM: "On death: Remove 3 buffs on that enemy.",
     security: 62,
     critR: 5,
     critD: 20,
-    speed: 95  
+    speed: 95,
+    target: "Self"  
   },
   {
     name: "Flamel",
     image: "images/chars/flamel.png",
+    patternImage: "images/pattern/pattern-flamel.png",
     affinity: "Antimatter",
     rarity: "Epic",
     faction: "Everliving",
@@ -395,11 +413,13 @@ passiveM: "When damaged: Apply SPEED DOWN I to that enemy and apply STASIS.",
     security: 56,
     critR: 7,
     critD: 20,
-    speed: 97  
+    speed: 97,
+    target: "Self"  
   },
   {
     name: "Fronline",
     image: "images/chars/frontline.png",
+    patternImage: "images/pattern/pattern-frontline.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Atlas Syndicate",
@@ -419,11 +439,13 @@ passiveM: "After damaging, an enemy with the affinity advantage bonus: Gain ATTA
     security: 12,
     critR: 16,
     critD: 62,
-    speed: 84  
+    speed: 84,
+    target: "Front"  
   },
   {
     name: "Gallant",
     image: "images/chars/gallant.png",
+    patternImage: "images/pattern/pattern-gallant.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Frontier Legion",
@@ -443,11 +465,13 @@ passiveM: "On kill: gain LEGION DISCIPLINE II.",
     security: 14,
     critR: 8,
     critD: 46,
-    speed: 86  
+    speed: 86,
+    target: "Front"  
   },
   {
     name: "Grif",
     image: "images/chars/grif.png",
+    patternImage: "images/pattern/pattern-grif.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Xaoc",
@@ -467,11 +491,13 @@ passiveM: "When an enemy cleanses a debuff: Deal damage and apply DISABLE.",
     security: 62,
     critR: 18,
     critD: 34,
-    speed: 97  
+    speed: 97,
+    target: "All"  
   },
   {
     name: "Harvester",
     image: "images/chars/harvester.png",
+    patternImage: "images/pattern/pattern-harvester.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Binderbug",
@@ -491,11 +517,13 @@ passiveM: "When all dies: give extra end of round action and gain SPEED UP I.",
     security: 62,
     critR: 18,
     critD: 34,
-    speed: 97  
+    speed: 97,
+    target: "Self"  
   },
   {
     name: "Hayyan",
     image: "images/chars/hayyan.png",
+    patternImage: "images/pattern/pattern-hayyan.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Everliving",
@@ -515,11 +543,13 @@ passiveM: "When self removes a debuff from an ally: apply repair. When an ally i
     security: 65,
     critR: 8,
     critD: 20,
-    speed: 98  
+    speed: 98,
+    target: "All"  
   },
   {
     name: "Heliodor",
     image: "images/chars/heliodor.png",
+    patternImage: "images/pattern/pattern-heliodor.png",
     affinity: "Thermal",
     rarity: "Epic",
     faction: "MPL",
@@ -539,11 +569,13 @@ passiveM: "When damaged (except dots): Expire debuffs on allies and apply repair
     security: 69,
     critR: 7,
     critD: 20,
-    speed: 92  
+    speed: 92,
+    target: "Self"  
   },
   {
     name: "Hermes",
     image: "images/chars/hermes.png",
+    patternImage: "images/pattern/pattern-hermes.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "Everliving",
@@ -563,11 +595,13 @@ passiveM: "When all ally crits an enemy: Fill charge and apply EVERLIVING REGENE
     security: 61,
     critR: 8,
     critD: 36,
-    speed: 85  
+    speed: 85,
+    target: "Self"  
   },
   {
     name: "Huanying",
     image: "images/chars/huanying.png",
+    patternImage: "images/pattern/pattern-huanying.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Tianchao",
@@ -587,11 +621,13 @@ passiveM: "When this ship applies a debuff: Gain STEALTH and gain TIANCHAO PRECI
     security: 11,
     critR: 5,
     critD: 22,
-    speed: 83  
+    speed: 83,
+    target: "Skip"  
   },
   {
     name: "Ionscorp",
     image: "images/chars/ionscorp.png",
+    patternImage: "images/pattern/pattern-ionscorp.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Atlas Syndicate",
@@ -611,11 +647,13 @@ passiveM: "Start of combat: Gain shield and gain ATLAS COORDINATION II.",
     security: 17,
     critR: 5,
     critD: 54,
-    speed: 81  
+    speed: 81,
+    target: "Front"  
   },
   {
     name: "Iridium",
     image: "images/chars/iridium.png",
+    patternImage: "images/pattern/pattern-iridium.png",
     affinity: "Antimatter",
     rarity: "Legendary",
     faction: "MPL",
@@ -635,11 +673,13 @@ passiveM: "This ship takes less damage from critical hits. When damaged (except 
     security: 41,
     critR: 1,
     critD: 4,
-    speed: 63  
+    speed: 63,
+    target: "Skip"  
   },
   {
     name: "Judge",
     image: "images/chars/judge.png",
+    patternImage: "images/pattern/pattern-judge.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Frontier Legion",
@@ -659,11 +699,13 @@ passiveM: "Damage increased for each dead  enemy. Start of round: Deal damage.",
     security: 9,
     critR: 19,
     critD: 54,
-    speed: 94  
+    speed: 94,
+    target: "Front" 
   },
   {
     name: "Kafa",
     image: "images/chars/kafa.png",
+    patternImage: "images/pattern/pattern-kafa.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Terran Combine",
@@ -683,11 +725,13 @@ passiveM: "When HP drops below 50%: Gain TERRAN TENACITY II.",
     security: 61,
     critR: 0,
     critD: 20,
-    speed: 60  
+    speed: 60,
+    target: "Front"  
   },
   {
     name: "Kinetik",
     image: "images/chars/kinetik.png",
+    patternImage: "images/pattern/pattern-kinetic.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Atlas Syndicate",
@@ -707,11 +751,13 @@ passiveM: "Every turn: Gain shield.",
     security: 59,
     critR: 2,
     critD: 4,
-    speed: 64  
+    speed: 64,
+    target: "Front"  
   },
   {
     name: "Laika",
     image: "images/chars/laika.png",
+    patternImage: "images/pattern/pattern-laika.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Xaoc",
@@ -731,11 +777,13 @@ passiveM: "When this ship removes a shield: Gain shield.",
     security: 41,
     critR: 12,
     critD: 34,
-    speed: 72  
+    speed: 72,
+    target: "Front"  
   },
   {
     name: "Larkspur",
     image: "images/chars/larkspur.png",
+    patternImage: "images/pattern/pattern-larkspur.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Gelecek",
@@ -755,11 +803,13 @@ passiveM: "When enemy cleanses a debuff: Gain GELECEK CONTAGION II.",
     security: 17,
     critR: 0,
     critD: 2,
-    speed: 78  
+    speed: 78,
+    target: "Front"  
   },
   {
     name: "Liberator",
     image: "images/chars/liberator.png",
+    patternImage: "images/pattern/pattern-liberator.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "Frontier Legion",
@@ -779,11 +829,13 @@ passiveM: "When enemy dies: Fill charge on all allies and give extra action.",
     security: 9,
     critR: 23,
     critD: 54,
-    speed: 94  
+    speed: 94,
+    target: "Front"  
   },
   {
     name: "Los",
     image: "images/chars/los.png",
+    patternImage: "images/pattern/pattern-los.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Xaoc ",
@@ -803,11 +855,13 @@ passiveM: "When HP drops under 50%, once per battle apply BLOCK DAMAGE. While HP
     security: 9,
     critR: 18,
     critD: 60,
-    speed: 84  
+    speed: 84,
+    target: "Front"  
   },
   {
     name: "Luxx",
     image: "images/chars/luxx.png",
+    patternImage: "images/pattern/pattern-luxx.png",
     affinity: "Antimatter",
     rarity: "Epic",
     faction: "Atlas Syndicate ",
@@ -827,11 +881,13 @@ passiveM: "Every turn until 4 charges are reached: Gain BLAST. Every turn gain s
     security: 19,
     critR: 15,
     critD: 62,
-    speed: 83  
+    speed: 83,
+    target: "Skip"  
   },
   {
     name: "Madax",
     image: "images/chars/madax.png",
+    patternImage: "images/pattern/pattern-madax.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Terran Combine",
@@ -851,11 +907,13 @@ passiveM: "When enemy dies: Repair self. When adjacent to a supporter: Receive m
     security: 68,
     critR: 5,
     critD: 12,
-    speed: 68  
+    speed: 68,
+    target: "Front"  
   },
   {
     name: "Magnolia",
     image: "images/chars/magnolia.png",
+    patternImage: "images/pattern/pattern-magnolia.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Gelecek",
@@ -875,11 +933,13 @@ passiveM: "When this ship damages enemy: Repair self.",
     security: 5,
     critR: 3,
     critD: 26,
-    speed: 92  
+    speed: 92,
+    target: "Front"  
   },
   {
     name: "Mangler",
     image: "images/chars/mangler.png",
+    patternImage: "images/pattern/pattern-mangler.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Marauders",
@@ -899,11 +959,13 @@ passiveM: "Every turn: Gain OVERLOAD. On kill: Lose OVERLOAD and gain MARAUDER R
     security: 2,
     critR: 25,
     critD: 34,
-    speed: 92  
+    speed: 92,
+    target: "Front"  
   },
   {
     name: "Medved",
     image: "images/chars/medved.png",
+    patternImage: "images/pattern/pattern-medved.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Xaoc",
@@ -923,11 +985,13 @@ passiveM: "On kill: Gain XAOC SWIFTNESS II.",
     security: 2,
     critR: 11,
     critD: 68,
-    speed: 81  
+    speed: 81,
+    target: "Front"  
   },
   {
     name: "Meiying",
     image: "images/chars/meiying.png",
+    patternImage: "images/pattern/pattern-meying.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "Tianchao",
@@ -947,11 +1011,13 @@ passiveM: "When this ships kills an enemy that has a debuff: Apply STASIS to adj
     security: 2,
     critR: 14,
     critD: 46,
-    speed: 92  
+    speed: 92,
+    target:"Back"  
   },
   {
     name: "Morao",
     image: "images/chars/morao.png",
+    patternImage: "images/pattern/pattern-morao.png",
     affinity: "Thermal",
     rarity: "Epic",
     faction: "Terran Combine",
@@ -971,11 +1037,13 @@ passiveM: "Every turn: Repair self. When self removes a debuff: Repair self and 
     security: 67,
     critR: 4,
     critD: 20,
-    speed: 62  
+    speed: 62,
+    target: "Front"  
   },
   {
     name: "Nemesis",
     image: "images/chars/nemesis.png",
+    patternImage: "images/pattern/pattern-nemesis.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Atlas Syndicate",
@@ -995,11 +1063,13 @@ passiveM: "Every turn, until 4 charges of WARDING SCREEN are reached: Gain WARDI
     security: 61,
     critR: 0,
     critD: 12,
-    speed: 66  
+    speed: 66,
+    target:"Front"  
   },
   {
     name: "Nosorog",
     image: "images/chars/nosorog.png",
+    patternImage: "images/pattern/pattern-nosorog.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Xaoc",
@@ -1019,11 +1089,13 @@ passiveM: "When damaged: Deal damage [No critical, Bypass defense].When self rem
     security: 68,
     critR: 5,
     critD: 12,
-    speed: 68  
+    speed: 68,
+    target: "Skip"  
   },
   {
     name: "Nuqtu",
     image: "images/chars/nuqtu.png",
+    patternImage: "images/pattern/pattern-nuqtu.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Terran Combine",
@@ -1043,11 +1115,13 @@ passiveM: "When an enemy gets buffed: Repair self and gain CORE CHARGE I.",
     security: 18,
     critR: 16,
     critD: 62,
-    speed: 84  
+    speed: 84,
+    target:"Front"  
   },
   {
     name: "Obsidian",
     image: "images/chars/obsidian.png",
+    patternImage: "images/pattern/pattern-obsidian.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "MPL",
@@ -1067,11 +1141,13 @@ passiveM: "On kill: Fill charge. When self removes a buff gain: ATACK UP III.",
     security: 21,
     critR: 16,
     critD: 64,
-    speed: 76  
+    speed: 76,
+    target:"Front"  
   },
   {
     name: "Opal",
     image: "images/chars/opal.png",
+    patternImage: "images/pattern/pattern-opal.png",
     affinity: "Electric",
     rarity: "Epic",
     faction: "MPL",
@@ -1091,11 +1167,13 @@ passiveM: "When damaged (except DoTs): Apply ATTACK DOWN II to that enemy and ga
     security: 66,
     critR: 0,
     critD: 4,
-    speed: 66  
+    speed: 66,
+    target: "Front"  
   },
   {
     name: "Panguan",
     image: "images/chars/panguan.png",
+    patternImage: "images/pattern/pattern-panguan.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Tianchao",
@@ -1115,11 +1193,13 @@ passiveM: "Friendly stealthed units deal 40% more damage. When damaged (except D
     security: 2,
     critR: 18,
     critD: 54,
-    speed: 87  
+    speed: 87,
+    target: "Front"  
   },
   {
     name: "Panon",
     image: "images/chars/panon.png",
+    patternImage: "images/pattern/pattern-panon.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "Terran Combine",
@@ -1139,11 +1219,13 @@ passiveM: "When damaged (except DoTs): Gain BLOCK ATTACKS and gain BARRIER RECHA
     security: 64,
     critR: 5,
     critD: 4,
-    speed: 71  
+    speed: 71,
+    target: "Front"  
   },
   {
     name: "Paracelsus",
     image: "images/chars/paracelsus.png",
+    patternImage: "images/pattern/pattern-paracelsus.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Everliving",
@@ -1163,11 +1245,13 @@ passiveM: "On death: Deal damage [Based on max HP] and apply EVERLIVING REGENERA
     security: 50,
     critR: 5,
     critD: 20,
-    speed: 95  
+    speed: 95,
+    target: "Self"  
   },
   {
     name: "Prospect",
     image: "images/chars/prospect.png",
+    patternImage: "images/pattern/pattern-prospect.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "MPL",
@@ -1187,11 +1271,13 @@ passiveM: "When this ship applies debuff: Gain INC. DAMAGE DOWN II.",
     security: 68,
     critR: 5,
     critD: 12,
-    speed: 68  
+    speed: 68,
+    target: "Front"  
   },
   {
     name: "Purifier",
     image: "images/chars/purifier.png",
+    patternImage: "images/pattern/pattern-purifier.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Binderburg",
@@ -1212,11 +1298,13 @@ passiveM: "When damaged: Remove 2 debuffs",
     security: 70,
     critR: 1,
     critD: 20,
-    speed: 87  
+    speed: 87,
+    target: "Self"  
   },
   {
     name: "Ravager",
     image: "images/chars/ravager.png",
+    patternImage: "images/pattern/pattern-ravager.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Marauders",
@@ -1236,11 +1324,13 @@ passiveM: "Every turn: Gain Overload. On kill: Lose Overload and gain MARAUDER R
     security: 1,
     critR: 28,
     critD: 34,
-    speed: 95  
+    speed: 95,
+    target: "Front"  
   },
   {
     name: "Redeemer",
     image: "images/chars/redeemer.png",
+    patternImage: "images/pattern/pattern-redeemer.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Frontier Legion",
@@ -1260,11 +1350,13 @@ passiveM: "Every turn: Gain shield.When HP drops below 60%: Apply DEFENSE UP III
     security: 56,
     critR: 1,
     critD: 12,
-    speed: 69  
+    speed: 69,
+    target: "Front"  
   },
   {
     name: "Refine",
     image: "images/chars/refine.png",
+    patternImage: "images/pattern/pattern-refine.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "MPL",
@@ -1284,11 +1376,13 @@ passiveM: "Ally damaged: Apply INC. DAMAGE I.",
     security: 71,
     critR: 5,
     critD: 20,
-    speed: 90  
+    speed: 90,
+    target: "Self"  
   },
   {
     name: "Rikra",
     image: "images/chars/rikra.png",
+    patternImage: "images/pattern/pattern-rirka.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Terran Combine",
@@ -1308,11 +1402,13 @@ passiveM: "On kill: Repair self.",
     security: 19,
     critR: 13,
     critD: 54,
-    speed: 77  
+    speed: 77,
+    target: "Front"  
   },
   {
     name: "Ripper",
     image: "images/chars/ripper.png",
+    patternImage: "images/pattern/pattern-ripper.png",
     affinity: "Electric",
     rarity: "Epic",
     faction: "Marauders",
@@ -1332,11 +1428,13 @@ passiveM: "On debuff application: Gain MARAUDER RAGE II and extend buffs on all 
     security: 12,
     critR: 13,
     critD: 10,
-    speed: 88  
+    speed: 88,
+    target: "Front"  
   },
   {
     name: "Rys",
     image: "images/chars/rys.png",
+    patternImage: "images/pattern/pattern-rys.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Xaoc",
@@ -1356,11 +1454,13 @@ passiveM: "When damaging a supporter/defender: Gain XAOC SWIFTNESS II.",
     security: 10,
     critR: 7,
     critD: 60,
-    speed: 85  
+    speed: 85,
+    target: "Skip"  
   },
   {
     name: "Salvation",
     image: "images/chars/salvation.png",
+    patternImage: "images/pattern/pattern-salvation.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Binderburg",
@@ -1380,11 +1480,13 @@ passiveM: "On death apply repair on all allies.When a buff is removed from an al
     security: 68,
     critR: 3,
     critD: 20,
-    speed: 94  
+    speed: 94,
+    target: "Self"  
   },
   {
     name: "Sansi",
     image: "images/chars/sansi.png",
+    patternImage: "images/pattern/pattern-sansi.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Tianchao",
@@ -1404,11 +1506,13 @@ passiveM: "When damaged: Apply BLOCK REPAIR on that enemy. Enemy repaired (excep
     security: 52,
     critR: 7,
     critD: 12,
-    speed: 82  
+    speed: 82,
+    target: "Skip"  
   },
   {
     name: "Sebufa",
     image: "images/chars/sebufa.png",
+    patternImage: "images/pattern/pattern-sebufa.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Terran Combine",
@@ -1428,11 +1532,13 @@ passiveM: "When self removes a buff from enemy: Repair self and remove 1 buff.",
     security: 17,
     critR: 15,
     critD: 54,
-    speed: 83  
+    speed: 83,
+    target: "Front"  
   },
   {
     name: "Sentinel",
     image: "images/chars/sentinel.png",
+    patternImage: "images/pattern/pattern-sentinel.png",
     affinity: "Thermal",
     rarity: "Legendary",
     faction: "Frontier Legion",
@@ -1452,11 +1558,13 @@ passiveM: "When an ally crits an enemy: Deal damage and apply repair on that all
     security: 58,
     critR: 15,
     critD: 20,
-    speed: 103  
+    speed: 103,
+    target: "Self"  
   },
   {
     name: "Sha Xing",
     image: "images/chars/sha_xing.png",
+    patternImage: "images/pattern/pattern-shaxing.png",
     affinity: "Thermal",
     rarity: "Epic",
     faction: "Tianchao",
@@ -1476,11 +1584,13 @@ passiveM: "When damaging a supporter/defender gain: STEALTH. When damaging a deb
     security: 5,
     critR: 9,
     critD: 46,
-    speed: 95  
+    speed: 95,
+    target: "Skip"  
   },
   {
     name: "Shashou",
     image: "images/chars/shashou.png",
+    patternImage: "images/pattern/pattern-shashou.png",
     affinity: "Antimatter",
     rarity: "Rare",
     faction: "Tianchao",
@@ -1500,11 +1610,13 @@ passiveM: "When damaging a supporter/defender: Gain stealth. Evey turn, until 4 
     security: 0,
     critR: 7,
     critD: 46,
-    speed: 89  
+    speed: 89,
+    target: "Back"  
   },
   {
     name: "Shelter",
     image: "images/chars/shelter.png",
+    patternImage: "images/pattern/pattern-shelter.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Binderburg",
@@ -1524,11 +1636,13 @@ passiveM: "When HP drops below 20%, once per battle: Apply BLOCK DAMAGE and INC.
     security: 67,
     critR: 5,
     critD: 20,
-    speed: 85  
+    speed: 85,
+    target:"Self"  
   },
   {
     name: "Sheperd",
     image: "images/chars/sheperd.png",
+    patternImage: "images/pattern/pattern-sheperd.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Binderburg",
@@ -1548,11 +1662,13 @@ passiveM: "When damaged: Apply CORROSION I to that enemy and apply ATTACK DOWN I
     security: 63,
     critR: 0,
     critD: 12,
-    speed: 66  
+    speed: 66,
+    target: "Front"  
   },
   {
     name: "Snapdragon",
     image: "images/chars/snapdragon.png",
+    patternImage: "images/pattern/pattern-snapdragon.png",
     affinity: "Electric",
     rarity: "Epic",
     faction: "Gelecek",
@@ -1572,11 +1688,13 @@ passiveM: "This ship Crit. Chance and Crit. Damage are increased by 20%.",
     security: 7,
     critR: 21,
     critD: 62,
-    speed: 90  
+    speed: 90,
+    target: "Front"  
   },
   {
     name: "Sokol",
     image: "images/chars/sokol.png",
+    patternImage: "images/pattern/pattern-sokol.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Xaoc",
@@ -1596,11 +1714,13 @@ passiveM: "Every turn, until 4 charges of BLAST are reached: Gain BLAST. On kill
     security: 4,
     critR: 13,
     critD: 68,
-    speed: 92  
+    speed: 92,
+    target: "Front"  
   },
   {
     name: "Stalwart",
     image: "images/chars/stalwart.png",
+    patternImage: "images/pattern/pattern-stalwart.png",
     affinity: "Electric",
     rarity: "Epic",
     faction: "Frontier Legion",
@@ -1620,11 +1740,13 @@ passiveM: "When damaged (except DoTs): deal damage and gain LEGION DISCIPLINE II
     security: 8,
     critR: 14,
     critD: 46,
-    speed: 93  
+    speed: 93,
+    target: "Skip"  
   },
   {
     name: "Sustainer",
     image: "images/chars/sustainer.png",
+    patternImage: "images/pattern/pattern-sustainer.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Binderburg",
@@ -1644,11 +1766,13 @@ passiveM: "Start of the round, if self has no debuffs: Gain OUT. DAMAGE UP III. 
     security: 20,
     critR: 12,
     critD: 46,
-    speed: 82  
+    speed: 82,
+    target: "Front"  
   },
   {
     name: "Torcher",
     image: "images/chars/torcher.png",
+    patternImage: "images/pattern/pattern-torcher.png",
     affinity: "Chemical",
     rarity: "Rare",
     faction: "Marauders",
@@ -1668,11 +1792,13 @@ passiveM: "On debuff application: Gain MARAUDER RAGE II.",
     security: 10,
     critR: 11,
     critD: 10,
-    speed: 82  
+    speed: 82,
+    target:"Front"  
   },
   {
     name: "Tycho",
     image: "images/chars/tycho.png",
+    patternImage: "images/pattern/pattern-tycho.png",
     affinity: "Thermal",
     rarity: "Rare",
     faction: "Everliving",
@@ -1692,11 +1818,13 @@ passiveM: "Start of combat: Gain CHEAT DEATH and EVERLIVING REGENERATION II. Whe
     security: 51,
     critR: 6,
     critD: 4,
-    speed: 69  
+    speed: 69,
+    target: "Front"  
   },
   {
     name: "Valerian",
     image: "images/chars/valerian.png",
+    patternImage: "images/pattern/pattern-valerian.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "Gelecek",
@@ -1716,11 +1844,13 @@ passiveM: "On damaging enemy: Apply repair on all allies.",
     security: 24,
     critR: 0,
     critD: 2,
-    speed: 81  
+    speed: 81,
+    target: "Front"  
   },
   {
     name: "Valiant",
     image: "images/chars/valiant.png",
+    patternImage: "images/pattern/pattern-valiant.png",
     affinity: "Electric",
     rarity: "Rare",
     faction: "Frontier Legion",
@@ -1740,11 +1870,13 @@ passiveM: "On kill: Fill charge.",
     security: 6,
     critR: 16,
     critD: 54,
-    speed: 91  
+    speed: 91,
+    target: "Front"  
   },
   {
     name: "Voron",
     image: "images/chars/voron.png",
+    patternImage: "images/pattern/pattern-voron.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Xaoc",
@@ -1764,11 +1896,13 @@ passiveM: "This ship takes 20%  less damage from DoTs. When damaged, instead: Ga
     security: 47,
     critR: 11,
     critD: 35,
-    speed: 75  
+    speed: 75,
+    target: "Front"  
   },
   {
     name: "Warden",
     image: "images/chars/warden.png",
+    patternImage: "images/pattern/pattern-warden.png",
     affinity: "Thermal",
     rarity: "Epic",
     faction: "Binderbug",
@@ -1788,11 +1922,13 @@ passiveM: "When damaged (except DoTs): Apply CORROSION I to that enemy and repai
     security: 61,
     critR: 0,
     critD: 4,
-    speed: 64  
+    speed: 64,
+    target: "Front"  
   },
   {
     name: "Xcellence",
     image: "images/chars/xcellence.png",
+    patternImage: "images/pattern/pattern-xcellence.png",
     affinity: "Chemical",
     rarity: "Legendary",
     faction: "Atlas Syndicate",
@@ -1812,11 +1948,13 @@ passiveM: "Every turn gain: Shield. When an enemy resists a debuff application: 
     security: 16,
     critR: 12,
     critD: 38,
-    speed: 89  
+    speed: 89,
+    target: "Skip"  
   },
   {
     name: "Yarrow",
     image: "images/chars/yarrow.png",
+    patternImage: "images/pattern/pattern-yarrow.png",
     affinity: "Antimatter",
     rarity: "Rare",
     faction: "Gelecek",
@@ -1836,11 +1974,13 @@ passiveM: "When an enemy cleanses a debuff: Gain GELECEK CONTAGION II.",
     security: 21,
     critR: 0,
     critD: 2,
-    speed: 82  
+    speed: 82,
+    target: "Front"  
   },
   {
     name: "Yazid",
     image: "images/chars/yazid.png",
+    patternImage: "images/pattern/pattern-yazid.png",
     affinity: "Electric",
     rarity: "Epic",
     faction: "Everliving",
@@ -1860,11 +2000,13 @@ passiveM: "Start of the combat: Gain CHEAT DEATH and EVERLIVING REGENERATION II.
     security: 53,
     critR: 4,
     critD: 12,
-    speed: 71  
+    speed: 71,
+    target: "Front"  
   },
   {
     name: "Yuyan",
     image: "images/chars/yuyan.png",
+    patternImage: "images/pattern/pattern-yuyan.png",
     affinity: "Chemical",
     rarity: "Epic",
     faction: "Tianchao",
@@ -1884,11 +2026,13 @@ passiveM: "When this ship applies a debuff: Gain STEALTH and TIANCHAO PRECISION 
     security: 17,
     critR: 11,
     critD: 30,
-    speed: 81  
+    speed: 81,
+    target:"Back"  
   },
     {
     name: "Zeolite",
     image: "images/chars/zeolite.png",
+    patternImage: "images/pattern/pattern-zeolite.png",
     affinity: "Electric",
     rarity: "Legendary",
     faction: "MPL",
@@ -1908,11 +2052,13 @@ passiveM: "Damage increased for each enemy with DISABLE or STASIS. When enemy di
     security: 33,
     critR: 6,
     critD: 30,
-    speed: 71  
+    speed: 71,
+    target: "Skip"  
   },
    {
     name: "Zosimos",
     image: "images/chars/zosimos.png",
+    patternImage: "images/pattern/pattern-zozimos.png",
     affinity: "Antimatter",
     rarity: "Legendary",
     faction: "Everliving",
@@ -1932,7 +2078,8 @@ passiveM: "Enemy repaired: Repair self, gain HACKING UP II and fill charge.",
     security: 12,
     critR: 6,
     critD: 22,
-    speed: 88 
+    speed: 88,
+    target: "Front" 
   },
 ]
 

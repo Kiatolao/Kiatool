@@ -14,8 +14,7 @@ var hangar = [
         basicA: "Apply shield, apply HACKING UP III and ATLAS COORDINATION III.",
         chargedA: "Apply shield and remove 2 debuffs.",
         cooldown: "4",
-        passiveM: "When ally within active pattern has their shield destroyed : apply DEFENSE UP II and remove all debuffs.",
-        target: "Self",       
+        passiveM: "When ally within active pattern has their shield destroyed : apply DEFENSE UP II and remove all debuffs.",       
         hp: 21805,
         attack: 2474,
         defense: 2881,
@@ -24,6 +23,7 @@ var hangar = [
         critR: 0,
         critD: 4,
         speed: 106,
+        target: "Self"
 
     },
     {
@@ -49,11 +49,13 @@ passiveM: "This ship takes 20% less damage from debuffed enemies. When an enemy 
         security: 58,
         critR: 0,
         critD: 0,
-        speed: 69  
+        speed: 69,
+        target: "Front"  
     },
     {
         name: "Anjian",
         image: "images/chars/anjian.png",
+        patternImage: "images/pattern/pattern-anjian.png",
         affinity: "Chemical",
         rarity: "Rare",
         faction: "Tianchao",
@@ -73,11 +75,13 @@ passiveM: "When damaging a debuffer/supporter: Gain STEALTH and gain TIANCHAO PR
         security: 0,
         critR: 11,
         critD: 38,
-        speed: 89  
+        speed: 89,
+        target: "z"  
     },
     {
         name: "Arum",
         image: "images/chars/arum.png",
+        patternImage: "images/pattern/pattern-arum.png",
         affinity: "Thermal",
         rarity: "Epic",
         faction: "Gelecek",
@@ -97,7 +101,8 @@ passiveM: "When an enemy cleanses a debuff: Apply OUT, DAMAGE DOWN I and apply G
         security: 19,
         critR: 0,
         critD: 10,
-        speed: 80  
+        speed: 80,
+        target: "z"  
     },
     {
         name: "Asphyxiator",
@@ -122,7 +127,8 @@ passiveM: "Start of round, if there are any enemies with >2 debuffs on them: Gai
         security: 5,
         critR: 22,
         critD: 10,
-        speed: 93  
+        speed: 93,
+        target:"Front"  
     },
     {
         name: "Berserker",
@@ -2081,6 +2087,7 @@ cards.forEach((card) => {
     cardInfoContainer.innerHTML = `
       <p style="text-align: left;">
         <strong><span style="color: orange;">ATTRIBUTES</span></strong><br>
+        <strong style="float: left; width: 80px;">Target</strong><span style="float: right;">${cardData.target}</span><br>
         <strong style="float: left; width: 90px;">HP</strong><span style="float: right;">${cardData.hp}</span><br>
         <strong style="float: left; width: 90px;">Attack</strong><span style="float: right;">${cardData.attack}</span><br>
         <strong style="float: left; width: 90px;">Defense</strong><span style="float: right;">${cardData.defense}</span><br>
@@ -2088,9 +2095,8 @@ cards.forEach((card) => {
         <strong style="float: left; width: 90px;">Security</strong><span style="float: right;">${cardData.security}</span><br>
         <strong style="float: left; width: 90px;">Crit Rate</strong><span style="float: right;">${cardData.critR}%</span><br>
         <strong style="float: left; width: 90px;">Crit Dam.</strong><span style="float: right;">${cardData.critD}%</span><br>
-        <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span><br>
-        <strong style="float: left; width: 90px;">Target</strong><span style="float: right;">${cardData.target}</span>
-      </p>
+        <strong style="float: left; width: 90px;">Speed</strong><span style="float: right;">${cardData.speed}</span>
+        
     `;
 
     const basicActiveContainer = document.createElement('div');

@@ -10,6 +10,24 @@ body {
 
 }
 
+#sova {
+  top: 5%;
+ position: fixed;
+  max-width: 130px;
+  height: auto;
+  z-index: -1;
+  opacity: 95%;
+  float: left;
+}
+
+@media (min-width: 481px) {
+  #sova {
+    max-width: 300px;
+    top: 0;
+  }
+}
+
+
 canvas {
 		  opacity: 0.5;
 		  position: fixed;
@@ -51,6 +69,11 @@ canvas {
   font-size: 18px;
 }
 
+.frontierslogo {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .navbar {
   width: 100%;
   background: #612E72;
@@ -58,7 +81,7 @@ canvas {
 }
 
 .block {
-background-image: url(images/BG_horizontal.png);
+background-image: url(Hangar_Background.png);
     background-position: right;
     opacity: 90%;
     vertical-align:middle;
@@ -175,6 +198,7 @@ i {
 }
 
 .gallery-container {
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -279,6 +303,7 @@ i {
 #resetButton {
   margin-left: auto;
   margin-right: auto;
+  opacity: 90%;
  
 }
 
@@ -316,22 +341,14 @@ i {
 }
 
 .modal-content {
-  opacity: 97%;
+  opacity: 99%;
   font-family: 'Inter';
   font-size: 13px;
   color: white ;
-  background-image: linear-gradient(
-  75deg,
-  hsl(240deg 1% 25%) 0%,
-  hsl(240deg 1% 24%) 11%,
-  hsl(240deg 1% 23%) 22%,
-  hsl(240deg 1% 22%) 33%,
-  hsl(240deg 1% 20%) 44%,
-  hsl(240deg 1% 19%) 56%,
-  hsl(240deg 1% 17%) 67%,
-  hsl(240deg 0% 15%) 78%,
-  hsl(240deg 0% 13%) 89%,
-  hsl(0deg 0% 11%) 100%);
+  background-image: url(Hangar_Background.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -399,5 +416,10 @@ i {
   position: absolute;
   top: 5%;
   right:3%;
-  opacity: 80%;
+  opacity: 87%;
+}
+
+#storeAnd {
+max-width: 100px;
+
 }

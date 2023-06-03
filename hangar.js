@@ -53,7 +53,7 @@ passiveM: "This ship takes 20% less damage from debuffed enemies. When an enemy 
         target: "Front"  
     },
     {
-        name: "Anjian",
+        name: "Anijan",
         image: "images/chars/anjian.png",
         patternImage: "images/pattern/pattern-anjian.png",
         affinity: "Chemical",
@@ -88,12 +88,12 @@ passiveM: "This ship takes 20% less damage from debuffed enemies. When an enemy 
         role: "Debuffer",
         basic: "attack down 2",
         charged: ["attack down 3", "crit rate down 3"],
-        passive: "out. damage 2",
+        passive: "out. damage down",
         refit: "gelecek contagion 2",
         basicA: "Deal damage and apply ATTACK DOWN II.",
 chargedA: "Deal damage, apply ATTACK DOWN III and CRIT RATE DOWN III.",
 cooldown: "3",
-passiveM: "When an enemy cleanses a debuff: Apply OUT, DAMAGE DOWN I and apply GELECEK CONTAGION II to all allies.",
+passiveM: "When an enemy cleanses a debuff: Apply OUT. DAMAGE DOWN I and apply GELECEK CONTAGION II to all allies.",
         hp: 14588,
         attack: 4351,
         defense: 2143,
@@ -240,7 +240,7 @@ passiveM: "When allies apply corrosion to an enemy: Repair self and apply CORROS
         patternImage: "images/pattern/pattern-crucialis.png",
         affinity: "Electric",
         rarity: "Rare",
-        faction: "GelecAtlas Syndicate",
+        faction: "Atlas Syndicate",
         role: "Attacker",
         basic: "bypass shield",
         charged: "bypass shield",
@@ -295,7 +295,7 @@ passiveM: "When self removes a debuff: Apply repair. Ally or self damaged (excep
     faction: "Binderburg",
     role: "Debuffer",
     basic: "attack down 3",
-    charged: "out. damage down 3",
+    charged: "out. damage down 2",
     passive: "",
     refit: "security down 3",
     basicA: "Deal damage and apply ATTACK DOWN III.",
@@ -480,7 +480,7 @@ passiveM: "On kill: gain LEGION DISCIPLINE II.",
     charged: ["crit damage up 3", "attack up 3"],
     passive: "",
     refit: "disable",
-    basicA: "Apply OUT. DAMAGE UP II to all allies and apply HACKING UP III.",
+    basicA: "Apply OUT. DAMAGE UP III to all allies and apply HACKING UP III.",
 chargedA: "Apply CRIT DMG UP III to all allies and apply ATTACK UP III.",
 cooldown: "4",
 passiveM: "When an enemy cleanses a debuff: Deal damage and apply DISABLE.",
@@ -500,7 +500,7 @@ passiveM: "When an enemy cleanses a debuff: Deal damage and apply DISABLE.",
     patternImage: "images/pattern/pattern-harvester.png",
     affinity: "Electric",
     rarity: "Rare",
-    faction: "Binderbug",
+    faction: "Binderburg",
     role: "Supporter",
     basic: ["crit rate up 2", "attack up 2", "remove debuff"],
     charged: ["crit damage up 3", "attack up 3"],
@@ -737,7 +737,7 @@ passiveM: "When HP drops below 50%: Gain TERRAN TENACITY II.",
     faction: "Atlas Syndicate",
     role: "Defender",
     basic: "defense down",
-    charged: ["defense down 2", "out. damage 2"],
+    charged: ["defense down 2", "out. damage down 2"],
     passive: "shield",
     refit: "",
     basicA: "Deal damage and apply DEFENSE DOWN I.",
@@ -838,7 +838,7 @@ passiveM: "When enemy dies: Fill charge on all allies and give extra action.",
     patternImage: "images/pattern/pattern-los.png",
     affinity: "Electric",
     rarity: "Legendary",
-    faction: "Xaoc ",
+    faction: "Xaoc",
     role: "Attacker",
     basic: "",
     charged: "xaoc swiftness 3",
@@ -864,7 +864,7 @@ passiveM: "When HP drops under 50%, once per battle apply BLOCK DAMAGE. While HP
     patternImage: "images/pattern/pattern-luxx.png",
     affinity: "Antimatter",
     rarity: "Epic",
-    faction: "Atlas Syndicate ",
+    faction: "Atlas Syndicate",
     role: "Attacker",
     basic: "bypass shield",
     charged: ["bypass shield", "atlas coordination 2"],
@@ -1133,7 +1133,7 @@ passiveM: "When an enemy gets buffed: Repair self and gain CORE CHARGE I.",
     basicA: "Remove 1 buff and deal damage [Based on max HP].",
 chargedA: "Deal damage [Based on max HP]. Deal more damage to low health enemies.",
 cooldown: "3",
-passiveM: "On kill: Fill charge. When self removes a buff gain: ATACK UP III.",
+passiveM: "On kill: Fill charge. When self removes a buff gain: ATTACK UP III.",
     hp: 19290,
     attack: 5720,
     defense: 2184,
@@ -1905,7 +1905,7 @@ passiveM: "This ship takes 20%  less damage from DoTs. When damaged, instead: Ga
     patternImage: "images/pattern/pattern-warden.png",
     affinity: "Thermal",
     rarity: "Epic",
-    faction: "Binderbug",
+    faction: "Binderburg",
     role: "Defender",
     basic: "provoke",
     charged: "corrosion 2",
@@ -2172,12 +2172,52 @@ hangar.forEach((ship) => {
   image.alt = ship.name;
 
   card.appendChild(image);
-
   
+  const factionImage = document.createElement("img");
+  switch (ship.faction) {
+    case "Atlas Syndicate":
+      factionImage.src = "images/factions/atlas_syndicate.png";
+      break;
+    case "Marauders":
+      factionImage.src = "images/factions/marauders.png";
+      break;
+    case "Binderburg":
+      factionImage.src = "images/factions/binderburg.png";
+      break;
+    case "MPL":
+      factionImage.src = "images/factions/mpl.png";
+      break;
+    case "Frontier Legion":
+      factionImage.src = "images/factions/frontier_legion.png";
+      break;
+    case "Everliving":
+      factionImage.src = "images/factions/everliving.png";
+      break;
+    case "Gelecek":
+      factionImage.src = "images/factions/gelecek.png";
+      break;
+    case "Tianchao":
+      factionImage.src = "images/factions/tianchao.png";
+      break;
+    case "Xaoc":
+      factionImage.src = "images/factions/xaoc.png";
+      break;
+    case "Terran Combine":
+      factionImage.src = "images/factions/terran_combine.png";
+  }
+
+  // Set the desired width and height for the faction image
+const factionImageWidth = 26; // Adjust this value as needed
+const factionImageHeight = 26; // Adjust this value as needed
+factionImage.style.width = `${factionImageWidth}px`;
+factionImage.style.height = `${factionImageHeight}px`;
+
+  factionImage.alt = ship.faction;
+  factionImage.classList.add("faction-image");
+  card.appendChild(factionImage);
+
   galleryContainer.appendChild(card);
 });
-
-
 
 const cardFilter = document.getElementById("cardFilter");
 cardFilter.addEventListener("change", filterCards);
@@ -2286,3 +2326,18 @@ passiveContainer.id = 'passiveContainer';
     });
   });
 });
+
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("scrollToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("scrollToTopBtn").style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

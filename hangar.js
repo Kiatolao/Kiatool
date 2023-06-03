@@ -2065,7 +2065,7 @@ passiveM: "Damage increased for each enemy with DISABLE or STASIS. When enemy di
     role: "Debuffer",
     basic: ["inc. repair down 2", "inc. damage up 2"],
     charged: "block repair",
-    passive: ["repair", "hacking up 2"],
+    passive: ["repair self", "hacking up 2"],
     refit: "fill charge",
     basicA: "Deal damage, apply INC. REPAIR DOWN II and INC DAMAGE UP II",
 chargedA: "Deal damage and apply INC. BLOCK REPAIR.",

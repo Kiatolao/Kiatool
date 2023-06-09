@@ -190,12 +190,20 @@ i {
 }
 
 /*Gallery and card settings*/
-
-.gallery {
+ .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 10px;
 }
+
+  #summonFont.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+    
+  }
 
 .gallery-container {
   z-index: 10;
@@ -212,6 +220,7 @@ i {
   max-width: 150px;
 
 }
+
 
 .card img {
   display: flex;
@@ -235,6 +244,10 @@ i {
   font-weight: bold;
   font-family: 'inter';
   text-shadow: #2c2c2c;
+}
+
+#summonFont .card::after {
+  font-size: 14px;
 }
 
 .legendary-card {
@@ -438,7 +451,7 @@ max-width: 100px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #333;
+  background-color: orange;
   color: #fff;
   font-size: 20px;
   border: none;
@@ -450,4 +463,38 @@ max-width: 100px;
 
 #scrollToTopBtn:hover {
   background-color: #555;
+}
+
+#summonFont .card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#summonFont .card.appear {
+  /* animation for the card appearance */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+#summonFont .card.epic-card {
+  box-shadow: 0 0 10px rgba(148, 0, 211, 0.7);
+}
+
+#summonFont .card.legendary-card {
+  box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+}
+
+@keyframes light {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 }

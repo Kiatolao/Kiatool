@@ -2118,10 +2118,10 @@ const galleryContainer = document.querySelector(".gallery");
 
   randomCards.forEach((ship, index) => {
     const card = createCard(ship);
-    card.style.animationDelay = `${index * 0.5}s`; // Ajoute un délai d'animation pour chaque carte
+    card.style.animationDelay = `${index * 0.5}s`; 
     galleryContainer.appendChild(card);
 
-    // Déclenche l'animation d'apparition
+
     setTimeout(() => {
       card.classList.add("appear");
     }, 100);

@@ -2206,9 +2206,9 @@ hangar.forEach((ship) => {
       factionImage.src = "images/factions/terran_combine.png";
   }
 
-  // Set the desired width and height for the faction image
-const factionImageWidth = 26; // Adjust this value as needed
-const factionImageHeight = 26; // Adjust this value as needed
+
+const factionImageWidth = 26; 
+const factionImageHeight = 26; 
 factionImage.style.width = `${factionImageWidth}px`;
 factionImage.style.height = `${factionImageHeight}px`;
 
@@ -2243,7 +2243,7 @@ function filterCards() {
       (typeof cardPassiveAbility === "string" && cardPassiveAbility === selectedValue) ||
       (typeof cardRefitAbility === "string" && cardRefitAbility === selectedValue)
     ) {
-      card.style.display = "block"; // 
+      card.style.display = "block";
     } else {
       card.style.display = "none"; 
     }

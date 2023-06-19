@@ -212,25 +212,7 @@ i {
   justify-content: center;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  border-bottom-right-radius: 10px;
-  max-width: 150px;
 
-}
-
-
-.card img {
-  display: flex;
-  justify-items: center;
-  max-width: 150px;
-  width:  100%;
-  height: auto;
-  display: block;
-  box-shadow: #292828;
-}
 
 .card::after {
   content: attr(data-name);
@@ -559,7 +541,44 @@ max-width: 100px;
 }
 
 .card, #external {
-  width: 400px;
+  width: 300px;
+  opacity: 85%;
+}
+
+.card-custom {
+  overflow: hidden;
+  min-height: 450px;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  width: 500px;
+}
+
+.card-custom-img {
+  height: 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-color: inherit;
+}
+
+/* First border-left-width setting is a fallback */
+.card-custom-img::after {
+  position: absolute;
+  content: '';
+  top: 200px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top-width: 40px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 545px;
+  border-left-width: calc(545px - 5vw);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: inherit;
 }
 
 

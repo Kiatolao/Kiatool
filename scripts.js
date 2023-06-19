@@ -17,7 +17,7 @@ const brutal = [2360,2414,2468,2521,2574,2628,2682,2539,2592,2646,2700,2754,2807
 3790,3844,3898,3951,4004,4058,4112,
 3969,4022,4076,4130,4184,4237,4290];
 const nightmare = [4719,4827,4934,5042,5148,5256,5363,
-  5077,5185,5291,5399,5506,5614,5720,
+  5077,5185,5291,53999,5506,5614,5720,
   5434,5542,5649,5757,5863,5971,6078,
   5792,5900,6006,6114,6221,6329,6435,
   6149,6257,6364,6472,6578,6686,6793,
@@ -47,6 +47,12 @@ let stage;
 let energy;
 let totalEnergy;
 let checkbox = document.getElementById("defaultCheck1");
+checkbox.addEventListener("click", () => {
+  document.getElementById("time").innerHTML = "";
+  document.getElementById("exp").innerHTML = "";
+  document.getElementById("energy").innerHTML = "";
+  document.getElementById("efficiency").innerHTML = "";
+});
 
 //updated input
 timeCompMin.addEventListener("input", () => {
@@ -248,6 +254,10 @@ calculate.addEventListener("click", () => {
   totalEnergy = energy * myRun;
   totalExp = stage * myRun;
   console.log(totalEnergy, totalExp)
+
+  if (checkbox.checked) {
+    totalExp *= 1.3;
+  }
   
   // Error alert when missing parameter
   if (
@@ -265,6 +275,11 @@ calculate.addEventListener("click", () => {
 
   let paragraphEn = `<span style="color: rgb(255, 153, 10)"> ${totalEnergy}</span> energy`;
   document.getElementById("energy").innerHTML = paragraphEn;
+  
+  let efficiency = Math.floor(totalExp / totalEnergy);
+  let paragraphEff = `<span style="color: rgb(255, 153, 10)">${efficiency}</span> XP/Energy`;
+  document.getElementById("efficiency").innerHTML = paragraphEff;
+
 });
 
 //Reset all value/option select
@@ -287,6 +302,7 @@ reset.addEventListener("click", () => {
   document.getElementById("time").innerHTML = "";
   document.getElementById("exp").innerHTML = "";
   document.getElementById("energy").innerHTML = "";
+  document.getElementById("efficiency").innerHTML = "";
   
   selectedArray.selectedIndex = 0;
   selectedSlice.selectedIndex = 0;

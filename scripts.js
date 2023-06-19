@@ -151,6 +151,7 @@ function updateStage() {
   } else if (selectedStage.value === "sta7") {
     stage = slice[6];
   }
+  
   updateEnergy();
 };
 
@@ -253,7 +254,7 @@ calculate.addEventListener("click", () => {
   // Total energy formula
   totalEnergy = energy * myRun;
   totalExp = stage * myRun;
-  console.log(totalEnergy, totalExp)
+
 
   if (checkbox.checked) {
     totalExp *= 1.3;
@@ -270,7 +271,7 @@ calculate.addEventListener("click", () => {
   }
 
   // Results display
-  let paragraphEx = `<span style="color: rgb(255, 153, 10)">${checkbox.checked ? totalExp * 1.3 : totalExp}</span> XP`;
+  let paragraphEx = `<span style="color: rgb(255, 153, 10)">${totalExp}</span> XP`;
   document.getElementById("exp").innerHTML = paragraphEx;
 
   let paragraphEn = `<span style="color: rgb(255, 153, 10)"> ${totalEnergy}</span> energy`;

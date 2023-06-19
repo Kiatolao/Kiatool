@@ -2088,11 +2088,14 @@ resetButton.addEventListener("click", resetCards);
 
 function resetCards() {
   document.getElementById('cardFilter').value = 'none';
+  document.getElementById('searchInput').value = ''; // Reset the value of the search input field
+
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.style.display = "block";
   });
 }
+
 
 hangar.sort((a, b) => {
   const rarityOrder = {
@@ -2249,6 +2252,46 @@ function filterCards() {
     }
   });
 }
+
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", searchCards);
+
+function searchCards() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    const cardName = card.getAttribute("data-name").toLowerCase();
+    const cardAffinity = hangar.find((ship) => ship.name.toLowerCase() === cardName).affinity.toLowerCase();
+    const cardRarity = hangar.find((ship) => ship.name.toLowerCase() === cardName).rarity.toLowerCase();
+    const cardFaction = hangar.find((ship) => ship.name.toLowerCase() === cardName).faction.toLowerCase();
+    const cardRole = hangar.find((ship) => ship.name.toLowerCase() === cardName).role.toLowerCase();
+    const cardBasicAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).basic;
+    const cardChargedAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).charged;
+    const cardRefitAbility = hangar.find((ship) => ship.name.toLowerCase() === cardName).refit;
+    const cardTarget = hangar.find((ship) => ship.name.toLowerCase() === cardName).target.toLowerCase();
+
+    if (
+      cardName.includes(searchTerm) ||
+      cardAffinity.includes(searchTerm) ||
+      cardRarity.includes(searchTerm) ||
+      cardFaction.includes(searchTerm) ||
+      cardRole.includes(searchTerm) ||
+      (Array.isArray(cardBasicAbilities) && cardBasicAbilities.some((ability) => ability.toLowerCase().includes(searchTerm))) ||
+      (Array.isArray(cardChargedAbilities) && cardChargedAbilities.includes(searchTerm)) ||
+      (Array.isArray(cardRefitAbility) && cardRefitAbility.includes(searchTerm)) ||
+      (typeof cardBasicAbilities === "string" && cardBasicAbilities.toLowerCase().includes(searchTerm)) ||
+      (typeof cardChargedAbilities === "string" && cardChargedAbilities.toLowerCase().includes(searchTerm)) ||
+      (typeof cardRefitAbility === "string" && cardRefitAbility.toLowerCase().includes(searchTerm)) ||
+      cardTarget.includes(searchTerm)
+    ) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
 
 const cards = document.querySelectorAll(".card");
 const modal = document.getElementById("modal");

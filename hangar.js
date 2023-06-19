@@ -556,7 +556,7 @@ passiveM: "When self removes a debuff from an ally: apply repair. When an ally i
     role: "Supporter",
     basic: ["inc. damage down 2", "defense up 3"],
     charged: ["security up 3", "matrix defense"],
-    passive: ["repair", "remove debuff"],
+    passive: ["repair", "expire debuff"],
     refit: "",
     basicA: "Apply INC. DAMAGE DOWN II and apply DEFENSE UP III.",
 chargedA: "Apply SECURITY UP III and apply DEFENSE MATRIX.",
@@ -1076,7 +1076,7 @@ passiveM: "Every turn, until 4 charges of WARDING SCREEN are reached: Gain WARDI
     role: "Defender",
     basic: "",
     charged: "remove debuff",
-    passive: ["bypass defense", "counter attack"],
+    passive: ["bypass defense", "counter attack", "no critical"],
     refit: "defense up 2",
     basicA: "Deal damage.",
 chargedA: "Deal damage and remove 1 buff.",
@@ -2262,35 +2262,35 @@ function searchCards() {
 
   cards.forEach((card) => {
     const cardName = card.getAttribute("data-name").toLowerCase();
-    const cardAffinity = hangar.find((ship) => ship.name.toLowerCase() === cardName).affinity.toLowerCase();
-    const cardRarity = hangar.find((ship) => ship.name.toLowerCase() === cardName).rarity.toLowerCase();
-    const cardFaction = hangar.find((ship) => ship.name.toLowerCase() === cardName).faction.toLowerCase();
-    const cardRole = hangar.find((ship) => ship.name.toLowerCase() === cardName).role.toLowerCase();
-    const cardBasicAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).basic;
-    const cardChargedAbilities = hangar.find((ship) => ship.name.toLowerCase() === cardName).charged;
-    const cardRefitAbility = hangar.find((ship) => ship.name.toLowerCase() === cardName).refit;
-    const cardTarget = hangar.find((ship) => ship.name.toLowerCase() === cardName).target.toLowerCase();
+    const ship = hangar.find((ship) => ship.name.toLowerCase() === cardName);
 
-    if (
-      cardName.includes(searchTerm) ||
-      cardAffinity.includes(searchTerm) ||
-      cardRarity.includes(searchTerm) ||
-      cardFaction.includes(searchTerm) ||
-      cardRole.includes(searchTerm) ||
-      (Array.isArray(cardBasicAbilities) && cardBasicAbilities.some((ability) => ability.toLowerCase().includes(searchTerm))) ||
-      (Array.isArray(cardChargedAbilities) && cardChargedAbilities.includes(searchTerm)) ||
-      (Array.isArray(cardRefitAbility) && cardRefitAbility.includes(searchTerm)) ||
-      (typeof cardBasicAbilities === "string" && cardBasicAbilities.toLowerCase().includes(searchTerm)) ||
-      (typeof cardChargedAbilities === "string" && cardChargedAbilities.toLowerCase().includes(searchTerm)) ||
-      (typeof cardRefitAbility === "string" && cardRefitAbility.toLowerCase().includes(searchTerm)) ||
-      cardTarget.includes(searchTerm)
-    ) {
+    if (isMatch(cardName) ||
+        isMatch(ship.affinity) ||
+        isMatch(ship.rarity) ||
+        isMatch(ship.faction) ||
+        isMatch(ship.role) ||
+        isMatch(ship.target) ||
+        isMatch(ship.basic) ||
+        isMatch(ship.charged) ||
+        isMatch(ship.refit) ||
+        isMatch(ship.passive)) {
       card.style.display = "block";
     } else {
       card.style.display = "none";
     }
   });
+
+  function isMatch(attribute) {
+    if (Array.isArray(attribute)) {
+      return attribute.some((item) => item.toLowerCase().includes(searchTerm));
+    }
+    if (typeof attribute === "string") {
+      return attribute.toLowerCase().includes(searchTerm);
+    }
+    return false;
+  }
 }
+
 
 
 const cards = document.querySelectorAll(".card");

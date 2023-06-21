@@ -10,6 +10,11 @@ body {
 
 }
 
+a{
+  font-family: "Inter";
+  font-weight: bold;
+}
+
 #sova {
   top: 10%;
  position: fixed;

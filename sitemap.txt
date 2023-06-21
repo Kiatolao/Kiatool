@@ -1,0 +1,4 @@
+https://kiatool.netlify.app/index.html
+https://kiatool.netlify.app/gallery.html
+https://kiatool.netlify.app/recruit.html
+https://kiatool.netlify.app/external-links.html

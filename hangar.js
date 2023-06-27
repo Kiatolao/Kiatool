@@ -301,7 +301,7 @@ const hangar = [
     basicA: "Deal damage and apply ATTACK DOWN III.",
     chargedA: "Deal damage and apply OUT. DAMAGE DOWN III.",
     cooldown: "4",
-    passiveM: "When an enemy uses their charged active: Deal damage and apply SECURITY DOWN II.",
+    passiveM: "When an enemy uses their charged active: Deal damage and apply CRIT RATE DOWN II.",
     hp: 19033,
     attack: 4562,
     defense: 2262,

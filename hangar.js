@@ -2273,7 +2273,9 @@ function searchCards() {
         isMatch(ship.faction) ||
         isMatch(ship.role) ||
         isMatch(ship.target) ||
+        isMatch(ship.basicA) ||
         isMatch(ship.basic) ||
+        isMatch(ship.chargedA) ||
         isMatch(ship.charged) ||
         isMatch(ship.refit) ||
         isMatch(ship.passive)) {
